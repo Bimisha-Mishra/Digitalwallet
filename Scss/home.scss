@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+html, body{
+    margin: 0;
+	position: relative;
+	min-height: 100vh;
+	background-color: #E1E8EE;
+	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+nav{
+	display:flex;
+    flex-direction: row;
+	justify-content: space-around;
+    align-items: center;
+	margin: 0px;
+	padding: 0px;
+	height: 100px;
+    width: 100%;
+}
+.logo-container{
+    width: auto;
+    height: inherit;
+
+    img{
+        width: auto;
+        height: inherit;
+    }
+}
+.search-container{
+    width: 30%;
+    height: 45px;
+    display: block;
+    margin: 0;
+  }
+  
+  input#search-bar{
+    margin: 0;
+    width:-webkit-fill-available;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    outline: none;
+    &:focus{
+      border: 1px solid #008ABF;
+      transition: 0.35s ease;
+      color: #008ABF;
+      &::-webkit-input-placeholder{
+        transition: opacity 0.45s ease; 
+          opacity: 0;
+       }
+      &::-moz-placeholder {
+        transition: opacity 0.45s ease; 
+          opacity: 0;
+       }
+      &:-ms-placeholder {
+       transition: opacity 0.45s ease; 
+         opacity: 0;
+       }    
+     }
+   }
+  
+  .search-icon{
+    position: relative;
+    float: right;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -45px;
+    right: 0;
+
+    img{
+        width: 40%;
+        height: 40%;
+    }
+}
+.icon-container{
+    width: 5%;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+//nav ends
+//---------------
+.main-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    
+    .menu-panal{
+        width: 20%;
+        height: fit-content;
+        background-color: #65a1b9;
+        
+        ul{
+            width: 100%;
+            height: fit-content;
+
+            li{
+                width: inherit;
+                height: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 0px 30px;
+
+                a{
+                    text-decoration: none;
+                    color: #000;
+                }
+
+            }
+        }
+    }
+    .service-panal{
+        width: 50%;
+        height: fit-content;
+        background-color: #65a1b9;
+    }
+    .info-panal{
+        width: 20%;
+        height: fit-content;
+        background-color: #65a1b9;
+
+    }
+}

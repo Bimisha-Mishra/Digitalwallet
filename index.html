@@ -13,41 +13,43 @@
         <nav>
             <img src="logo.png" alt="logo">
             <ul class="menuItems">
-            <li><a href='#' data-item='Home'>Home</a></li>
-            <li><a href='#' data-item='About'>About</a></li>
+            <li><a href='home.html' data-item='Home'>Home</a></li>
+            <li><a href='About.php' data-item='About'>About</a></li>
             <li><a href='#' data-item='Services'>Services</a></li>
-            <li><a href='#' data-item='Blog'>Blog</a></li>
+            <li><a href='LoadFund.php' data-item='Load Fund'>Load Fund</a></li>
             <li><a href='#' data-item='Contact'>Contact</a></li>
-            <li><a href='#' data-item='Login'>Login</a></li>
+            <li><a href='index.php' data-item='Login'>Login</a></li>
           </ul>
         </nav>
     </section>
-    <section class="input-form">
-        <div class="form-structor">
-            <div class="signup">
-                <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
-                <div class="form-holder">
-                    <input type="text" class="input" placeholder="Name" required/>
-                    <input type="number" class="input" placeholder="Mobile Number" required/>
-                    <input type="email" class="input" placeholder="Email" />
-                    <input type="password" class="input" placeholder="Password" required/>
-                    <input type="password" class="input" placeholder="Confirm Password" required/>
-                </div>
-                <button class="submit-btn">Sign up</button>
-            </div>
-            <div class="login slide-up">
-                <div class="center">
-                    <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+    <form action="insert_data.php" method="post">
+        <section class="input-form">
+            <div class="form-structor">
+                <div class="signup">
+                    <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
                     <div class="form-holder">
-                        <input type="email" class="input" placeholder="Email" />
-                        <input type="password" class="input" placeholder="Password" />
+                        <input type="text" class="input" placeholder="Name" name= "Username" required/>
+                        <input type="number" class="input" placeholder="Mobile Number" name= "MobileNumber"required/>
+                        <input type="email" class="input" placeholder="Email" name= "Email"/>
+                        <input type="password" class="input" placeholder="Password" name= "Password" required/>
+                        <input type="password" class="input" placeholder="Confirm Password" required/>
                     </div>
-                    <button class="submit-btn">Log in</button>
-                    <a href="#">Forgot Password?</a>
+                    <button class="submit-btn">Sign up</button>
+                </div>
+                <div class="login slide-up">
+                    <div class="center">
+                        <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+                        <div class="form-holder">
+                            <input type="email" class="input" placeholder="Email" />
+                            <input type="password" class="input" placeholder="Password" />
+                        </div>
+                        <button class="submit-btn">Log in</button>
+                        <a href="#">Forgot Password?</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </form>
     <script src="script/scrypt.js"></script>
 </body>
 </html>
