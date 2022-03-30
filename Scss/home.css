@@ -136,14 +136,17 @@ input#search-bar:focus:-ms-placeholder {
 }
 
 .main-container .menu-panal ul {
-  width: 100%;
+  margin: 0px;
+  padding: 10% 0% 10% 10%;
+  width: 90%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
 
 .main-container .menu-panal ul li {
-  width: inherit;
+  margin: 0;
+  width: 100%;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,7 +161,7 @@ input#search-bar:focus:-ms-placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0px 30px;
+  gap: 0px 5%;
 }
 
 .main-container .menu-panal ul li a {
@@ -180,5 +183,72 @@ input#search-bar:focus:-ms-placeholder {
   height: -moz-fit-content;
   height: fit-content;
   background-color: #65a1b9;
+}
+
+.main-container .info-panal table {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.main-container .info-panal table tr {
+  width: 100%;
+  height: 75px;
+}
+
+.main-container .info-panal table tr th {
+  width: 100%;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .info-panal table tr td {
+  width: 100%;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .info-panal table tr td .balance-icon {
+  width: auto;
+  height: 90%;
+  background-color: #18698a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.main-container .info-panal table tr td .balance-icon img {
+  width: auto;
+  height: 70%;
+}
+
+.main-container .info-panal table tr td .info-container {
+  width: 50%;
 }
 /*# sourceMappingURL=home.css.map */
