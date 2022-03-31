@@ -177,6 +177,83 @@ input#search-bar:focus:-ms-placeholder {
   background-color: #65a1b9;
 }
 
+.main-container .service-panal .services-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container .service-panal .service-box {
+  max-width: 33.33%;
+  padding: 10px;
+  text-align: center;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.main-container .service-panal .service-box a {
+  text-decoration: none;
+}
+
+.main-container .service-panal .service-icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border: 3px solid #82ccdd;
+  color: #73b2bd;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-bottom: 30px;
+  margin-top: 16px;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.main-container .service-panal .service-icon i {
+  line-height: 70px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  font-size: 26px;
+}
+
+.main-container .service-panal .service-box:hover .service-icon {
+  background: #82ccdd;
+  color: #ddd;
+}
+
+.main-container .service-panal .service-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.main-container .service-panal .service-desc {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 960px) {
+  .main-container .service-panal .service-box {
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-container .service-panal .service-box {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-container .service-panal .service-box {
+    max-width: 100%;
+  }
+}
+
 .main-container .info-panal {
   width: 20%;
   height: -webkit-fit-content;
@@ -250,5 +327,34 @@ input#search-bar:focus:-ms-placeholder {
 
 .main-container .info-panal table tr td .info-container {
   width: 50%;
+}
+
+.main-container .info-panal table tr td .load-button {
+  color: #000;
+}
+
+.main-container .info-panal table tr td .load-button ::after, .main-container .info-panal table tr td .load-button ::before {
+  border: 3px solid #000;
+  content: "";
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.main-container .info-panal table tr td .load-button ::after :hover::after, .main-container .info-panal table tr td .load-button ::before :hover::after {
+  -webkit-transform: translate(-5px, -5px);
+          transform: translate(-5px, -5px);
+}
+
+.main-container .info-panal table tr td .load-button ::after :hover::after :hover::before, .main-container .info-panal table tr td .load-button ::before :hover::after :hover::before {
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
 }
 /*# sourceMappingURL=home.css.map */
