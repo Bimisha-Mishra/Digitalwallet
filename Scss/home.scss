@@ -131,12 +131,11 @@ nav{
         background-color: #65a1b9;
         .services-container{
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
           }
           
           .service-box{
-            max-width: 33.33%;
+            width: 25%;
             padding: 10px;
             text-align: center;
             color: #ddd;
@@ -227,17 +226,18 @@ nav{
                     align-items: center;
                     
                     .balance-icon{
-                        width: auto;
-                        height: 90%;
+                        width: 3em;
+                        height: 3em;
+                        border-radius: 50%;
                         background-color: #18698a;
                         display: flex;
                         justify-content: center;
-                        align-items: center;
+                        align-items: flex-end;
                         overflow: hidden;
 
                         img{
                             width: auto;
-                            height: 70%;   
+                            height: 80%;   
                         }
                     }
                     .info-container{
