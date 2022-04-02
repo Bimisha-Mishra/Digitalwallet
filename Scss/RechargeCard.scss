@@ -1,8 +1,4 @@
-$ruler: 16px;
-$color-red: #AE1100;
-$color-bg: #EBECF0;
-$color-shadow: #BABECC;
-$color-white: #FFF;
+@import 'constants';
 
 form {
   padding: $ruler;
@@ -50,6 +46,7 @@ input {
   display: flex;
   justify-content:space-evenly;
   width: 100%;
+  padding-bottom: calc(16px * 2 + 0.83em);
 }
 .card-button {
   color:#61677C;

@@ -55,6 +55,7 @@ input:focus {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 100%;
+  padding-bottom: calc(16px * 2 + 0.83em);
 }
 
 .card-button {

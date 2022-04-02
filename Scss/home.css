@@ -91,10 +91,37 @@ input#search-bar:focus:-ms-placeholder {
   opacity: 0;
 }
 
+input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #EBECF0;
+  text-shadow: 1px 1px 0 #FFF;
+  margin-right: 8px;
+  -webkit-box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+          box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+input:focus {
+  -webkit-box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+          box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
 .search-icon {
-  background-color: white;
   width: 45px;
   height: 45px;
+  position: relative;
+  right: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,7 +235,7 @@ input#search-bar:focus:-ms-placeholder {
 }
 
 .main-container .service-panal {
-  width: calc(50% - 4px);
+  width: calc(50% - 2px);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
