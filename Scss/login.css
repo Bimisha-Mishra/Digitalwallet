@@ -1,0 +1,198 @@
+@-webkit-keyframes button-twitter-animation {
+  from {
+    top: 50%;
+    height: 10em;
+    width: 10em;
+  }
+  to {
+    top: -3em;
+    height: 6em;
+    width: 6em;
+  }
+}
+
+@keyframes button-twitter-animation {
+  from {
+    top: 50%;
+    height: 10em;
+    width: 10em;
+  }
+  to {
+    top: -3em;
+    height: 6em;
+    width: 6em;
+  }
+}
+
+@-webkit-keyframes login-fadein {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes login-fadein {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes login-border-animation {
+  to {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes login-border-animation {
+  to {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0;
+  }
+}
+
+* {
+  font-size: 8px;
+}
+
+.main {
+  position: relative;
+  margin-top: 20vh;
+}
+
+.login-fieldset-field, .login-fieldset-submit {
+  min-width: 300px;
+  font-size: 1.6em;
+  margin: 0.8em auto;
+  padding: 0.8em;
+  width: 80%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login {
+  width: 500px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: auto;
+  position: relative;
+  border: 0;
+  border-radius: 5px;
+}
+
+.login-sides {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  border: 0;
+  border-radius: 5px;
+}
+
+.login-sides line {
+  fill: none;
+  stroke: #151B6B;
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  stroke-linecap: round;
+  stroke-width: 5;
+  -webkit-animation: login-border-animation 0.5s forwards;
+          animation: login-border-animation 0.5s forwards;
+}
+
+.login-sides line.first {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.login-sides line.second {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+.login-sides line.third {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.login-fieldset {
+  -webkit-animation: login-fadein 0.5s ease-in-out forwards;
+          animation: login-fadein 0.5s ease-in-out forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5em 0;
+  opacity: 0;
+}
+
+.login-fieldset-field {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 0;
+  border: 1px solid #f2f2f2;
+}
+
+.login-fieldset-submit {
+  background-color: #151B6B;
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  border-radius: 3px;
+}
+
+.button-twitter {
+  -webkit-animation: button-twitter-animation 0.5s forwards;
+          animation: button-twitter-animation 0.5s forwards;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: #151B6B;
+  margin: auto;
+  z-index: 1;
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  transition: -webkit-box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
+  border: 0;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: 6em;
+  width: 6em;
+}
+
+.button-twitter:hover {
+  -webkit-box-shadow: 0px 1px 1px 1px #ccc;
+          box-shadow: 0px 1px 1px 1px #ccc;
+}
+/*# sourceMappingURL=login.css.map */

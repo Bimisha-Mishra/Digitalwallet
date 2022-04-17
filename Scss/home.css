@@ -3,7 +3,6 @@ html, body {
   margin: 0;
   position: relative;
   min-height: 100vh;
-  background-color: #E1E8EE;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,10 +66,10 @@ input#search-bar {
 }
 
 input#search-bar:focus {
-  border: 1px solid #008ABF;
+  border: 1px solid #151B6B;
   -webkit-transition: 0.35s ease;
   transition: 0.35s ease;
-  color: #008ABF;
+  color: #151B6B;
 }
 
 input#search-bar:focus::-webkit-input-placeholder {
@@ -253,14 +252,13 @@ input:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(0, 0, 0, 0.123);
 }
 
 .main-container .service-panal .services-container .service-box {
   width: 25%;
   padding: 10px;
   text-align: center;
-  color: #ddd;
+  color: #151B6B;
   cursor: pointer;
 }
 
@@ -272,8 +270,8 @@ input:focus {
   display: inline-block;
   width: 70px;
   height: 70px;
-  border: 3px solid #82ccdd;
-  color: #73b2bd;
+  border: 3px solid #151B6B;
+  color: #151B6B;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   margin-bottom: 30px;
@@ -290,12 +288,12 @@ input:focus {
 }
 
 .main-container .service-panal .services-container .service-box:hover .service-icon {
-  background: #82ccdd;
+  background: #151B6B;
   color: #ddd;
 }
 
 .main-container .service-panal .services-container .service-title {
-  color: #000;
+  color: #151B6B;
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -382,8 +380,8 @@ input:focus {
   text-align: center;
   line-height: 380px;
   font-family: "Varela Round", sans-serif;
-  background-color: rgba(255, 255, 255, 0.3);
-  text-shadow: 0px 0px 15px #777777;
+  background-color: #151B6B;
+  text-shadow: 0px 0px 15px #151B6B;
 }
 
 .main-container .service-panal .slide:hover + .nav label {
@@ -504,7 +502,7 @@ input:focus {
   line-height: 380px;
   font-family: "Varela Round", sans-serif;
   background-color: rgba(255, 255, 255, 0.3);
-  text-shadow: 0px 0px 15px #777777;
+  text-shadow: 0px 0px 15px #151B6B;
 }
 
 .main-container .service-panal .slide:hover + .nav label {
@@ -579,7 +577,7 @@ input:focus {
   height: -moz-fit-content;
   height: fit-content;
   border-spacing: 0;
-  border: 1px solid black;
+  border: 1px solid #151B6B;
 }
 
 .main-container .info-panal .balance tr {
@@ -605,11 +603,11 @@ input:focus {
   text-decoration: none;
   padding: 10px 25px;
   position: relative;
-  color: #000;
+  color: #151B6B;
 }
 
 .main-container .info-panal .balance tr th .load-button::after, .main-container .info-panal .balance tr th .load-button::before {
-  border: 3px solid #000;
+  border: 3px solid #151B6B;
   content: "";
   position: absolute;
   width: calc(100% - 6px);
@@ -650,7 +648,7 @@ input:focus {
   width: 3em;
   height: 3em;
   border-radius: 50%;
-  background-color: #73b2bd;
+  background-color: #151B6B;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -678,7 +676,7 @@ input:focus {
   height: -moz-fit-content;
   height: fit-content;
   border-spacing: 0;
-  border: 1px solid black;
+  border: 1px solid #151B6B;
   margin-top: 10%;
   padding: 0% 10%;
 }

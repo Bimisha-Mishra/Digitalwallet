@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+aside {
+  position: fixed;
+  background-color: grey;
+  width: 340px;
+  height: 100vh;
+  z-index: 1;
+  padding: 10px;
+  -webkit-transform: translate(0px);
+  transform: translate(0px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 55px;
+  text-align: center;
+  font-size: 30px;
+}
+
+aside ul li {
+  margin-bottom: 20px;
+}
+
+aside ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+aside ul li a:hover {
+  color: yellow;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  padding-top: 65px;
+  padding-left: 10px;
+}
+
+.menu-icon {
+  width: 60px;
+  height: 45px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 3;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  float: right;
+}
+
+.menu-icon span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: black;
+  opacity: 1;
+  left: 0;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.menu-icon span:before, .menu-icon span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: black;
+  opacity: 1;
+  left: 0;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.menu-icon span:before {
+  top: 18px;
+}
+
+.menu-icon span:after {
+  top: 36px;
+}
+
+.menu-icon:hover span,
+.menu-icon:hover span:before,
+.menu-icon:hover span:after {
+  background: blue;
+}
+
+.open.menu-icon {
+  position: absolute;
+  top: 10px;
+  left: 295px;
+}
+
+.open.menu-icon:hover span,
+.open.menu-icon:hover span:after {
+  background: red;
+}
+
+.open span {
+  top: 18px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background: white;
+}
+
+.open span:before {
+  width: 0%;
+  left: 50%;
+}
+
+.open span:after {
+  top: 0px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background: white;
+}
+
+.closed {
+  -webkit-transform: translate(-360px);
+          transform: translate(-360px);
+}
+/*# sourceMappingURL=slidingmenu.css.map */

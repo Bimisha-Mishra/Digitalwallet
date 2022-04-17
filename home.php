@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("connection.php");
+//$user_data = check_login($conn);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/home.css">
+    <link rel="stylesheet" href="Scss/slidingmenu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <title>Easy Pay</title>
 </head>
 <body>
@@ -28,63 +37,27 @@
     <!--nav section ends-->
     <!---->
     <section class="main-container">
-        <div class="menu-panal">
-            <ul>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-house"></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-coins"></i>
-                        Services
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-calendar-check"></i>
-                        Bookings
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-user"></i>
-                        Account
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-wallet"></i>
-                        Wallet
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-building-columns"></i>
-                        Bank Link
-                    </a>
-                </li>
-                <li>
-                    <a href='#'>
-                        <i class="fa-solid fa-clock"></i>
-                        Transaction History</a>
-                    </li>
-                    <li>
-                        <a href='#'>
-                            <i class="fa-solid fa-gift"></i>
-                            Coupon
-                        </a>
-                    </li>
-                    <li>
-                        <a href='#'>
-                            <i class="fa-solid fa-hand-holding-dollar"></i>
-                            Loyalty
-                        </a>
-                    </li>
+        <div class="wrapper">
+            <aside class="closed" id="sidebar">
+                <ul>
+                <li><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="#"><i class="fa-solid fa-coins"></i>Services</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar-check"></i>Bookings</a></li>
+                <li><a href='#'><i class="fa-solid fa-user"></i>Account</a></li>
+                <li><a href='#'><i class="fa-solid fa-wallet"></i>Wallet</a></li>
+                <li><a href='#'><i class="fa-solid fa-building-columns"></i>Bank Link</a></li>
+                <li><a href='#'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
+                <li><a href='#'><i class="fa-solid fa-gift"></i>Coupon</a></li>
+                <li><a href='#'><i class="fa-solid fa-hand-holding-dollar"></i>Loyalty</a></li>
                 </ul>
+            </aside>
+    
+        <main>
+            <div class="menu-icon" id="menu-icon" onclick="toggleNav()">
+            <span></span>
             </div>
+        </main>
+    </div>
             <!------------------------------->
             <div class="service-panal">
                     <div class="services-container">
@@ -249,6 +222,7 @@
                 </table>
             </div>
         </section>
+        <script src = "script/slidingmenu.js"></script>
         <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
     </body>
     </html>

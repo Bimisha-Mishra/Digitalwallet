@@ -5,7 +5,6 @@ html, body{
   margin: 0;
   position: relative;
   min-height: 100vh;
-  background-color: #E1E8EE;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,9 +49,9 @@ input#search-bar{
   border: 0px solid #D0CFCE;
   outline: none;
   &:focus{
-    border: 1px solid #008ABF;
+    border: 1px solid #151B6B;
     transition: 0.35s ease;
-    color: #008ABF;
+    color: #151B6B;
     &::-webkit-input-placeholder{
       transition: opacity 0.45s ease; 
       opacity: 0;
@@ -185,13 +184,12 @@ input {
       width: 100%;
       display: flex;
       justify-content: center;
-      background-color: rgba(0, 0, 0, 0.123);
 
       .service-box{
         width: 25%;
         padding: 10px;
         text-align: center;
-        color: #ddd;
+        color: #151B6B;
         cursor: pointer;
       }
       .service-box a{
@@ -202,8 +200,8 @@ input {
         display: inline-block;
         width: 70px;
         height: 70px;
-        border: 3px solid #82ccdd;
-        color: #73b2bd;
+        border: 3px solid #151B6B;
+        color: #151B6B;
         transform: rotate(45deg);
         margin-bottom: 30px;
         margin-top: 16px;
@@ -215,11 +213,11 @@ input {
         font-size: 26px;
       }
       .service-box:hover .service-icon{
-        background: #82ccdd;
+        background: #151B6B;
         color: #ddd;
       }
       .service-title{
-        color: #000;
+        color: #151B6B;
         font-size: 18px;
         text-transform: uppercase;
         margin-bottom: 10px;
@@ -303,8 +301,8 @@ input {
       text-align: center;
       line-height: 380px;
       font-family: "Varela Round", sans-serif;
-      background-color: rgba(255, 255, 255, .3);
-      text-shadow: 0px 0px 15px rgb(119, 119, 119);
+      background-color: #151B6B;
+      text-shadow: 0px 0px 15px #151B6B;
     }
     
     .slide:hover + .nav label { opacity: 0.5; }
@@ -413,7 +411,7 @@ input {
       line-height: 380px;
       font-family: "Varela Round", sans-serif;
       background-color: rgba(255, 255, 255, .3);
-      text-shadow: 0px 0px 15px rgb(119, 119, 119);
+      text-shadow: 0px 0px 15px #151B6B;
     }
     
     .slide:hover + .nav label { opacity: 0.5; }
@@ -467,7 +465,7 @@ input {
     }
   }
   //service-panal ends
-  
+  //---------------------------------------------------------
   .info-panal{
     width: 20%;
     height: fit-content;
@@ -477,7 +475,7 @@ input {
       width: 100%;
       height: fit-content;
       border-spacing: 0;
-      border: 1px solid black;
+      border: 1px solid #151B6B;
       
       tr{
         width: 100%;
@@ -494,9 +492,9 @@ input {
             text-decoration: none;
             padding: 10px 25px;
             position: relative; 
-            color: #000;
+            color: #151B6B;
             &::after, &::before{
-              border: 3px solid #000;
+              border: 3px solid #151B6B;
               content: "";
               position: absolute;
               width: calc(100% - 6px);
@@ -525,7 +523,7 @@ input {
             width: 3em;
             height: 3em;
             border-radius: 50%;
-            background-color: #73b2bd;
+            background-color: #151B6B;
             display: flex;
             justify-content: center;
             align-items: flex-end;
@@ -547,7 +545,7 @@ input {
       width: 100%;
       height: fit-content;
       border-spacing: 0;
-      border: 1px solid black;
+      border: 1px solid #151B6B;
       margin-top: 10%;
       padding: 0% 10%;
 
