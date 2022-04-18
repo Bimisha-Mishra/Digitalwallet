@@ -82,7 +82,7 @@ input {
   transition: all 0.2s ease-in-out;
   appearance: none;
   -webkit-appearance: none;
-
+  
   &:focus {
     box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
   }
@@ -109,82 +109,40 @@ input {
   justify-content: flex-end;
   align-items: center;
   gap: 0% 10%;
-
+  
   i{
-    padding-right: 10%;
+    margin-right: 10%;
     width: fit-content;
     height: fit-content;
     font-size: 1.7em;
+    cursor: pointer;
   }
 }
 //nav ends
 //---------------
+
+//menu-panal ends
 .main-container{
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-evenly;
   
-  .menu-panal{
-    width: 20%;
-    height: fit-content;
-    margin: 2% 0%;
-    
-    ul{
-      margin: 0px;
-      padding: 0px;
-      
-      width: 100%;
-      height: fit-content;
-      list-style-type: none;
-      
-      li{
-        margin: 0.5em 0;
-        width: 100%;
-        height: 50px;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        
-        a{
-          width: 90%;
-          height: inherit;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 0px 10%;
-          text-decoration: none;
-          color: #000;
-          font-size: 1.4em;
-          &:hover{
-            background-color: rgba(255, 255, 255, 0.5);
-          }
-
-          i{
-            width: 1.4em;
-            padding-left: 10%;
-            font-size: 1em;
-          }
-        }
-        
-      }
-    }
-  }
-  //menu-panal ends
+  
   
   .service-panal{
-    width: calc(50% - 2px);
+    width: calc(70% - 2px);
     height: fit-content;
     margin: 2% 0%;
     padding: 0%;
     border: 1px solid black;
     border-spacing: 0;
-
+    
     .services-container{
       width: 100%;
       display: flex;
       justify-content: center;
-
+      
       .service-box{
         width: 25%;
         padding: 10px;
@@ -548,7 +506,7 @@ input {
       border: 1px solid #151B6B;
       margin-top: 10%;
       padding: 0% 10%;
-
+      
       tr{
         width: 100%;
         height: 2em;
