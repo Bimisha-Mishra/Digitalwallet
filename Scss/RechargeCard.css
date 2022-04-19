@@ -79,4 +79,9 @@ input:focus {
   -webkit-box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
           box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
 }
+
+.main-container .service-panal {
+  border: 3.5px solid #151B6B;
+  border-radius: 6.5px;
+}
 /*# sourceMappingURL=RechargeCard.css.map */

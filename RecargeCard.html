@@ -1,216 +1,217 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="Scss/home.css"> 
-    <link rel="stylesheet" href="Scss/RechargeCard.css">
+    <link rel="stylesheet" title="recharge" href="Scss/RechargeCard.css">
+    <link rel="stylesheet" href="Scss/slidingmenu.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-  </head>
-  <body>
+</head>
+<body>
     <!--nav section-->
     <section>
-      <nav>
-          <div class="logo-container">
-              <img src="logo.png" alt="logo">
-          </div>
-          <div class="search-container">
-              <input id= "search-bar" type="text" placeholder="Search">   
-              <a href="#" class="search-icon">
-                <img src="Images/search.png">
-              </a>             
-          </div>
-          <div class="icon-container">
-              <i class="fas fa-solid fa-bell"></i>
-              <i class="fa-solid fa-gear"></i>
-          </div>
-      </nav>
-  </section><!--nav section ends-->
-  <section class="main-container">
-    <div class="menu-panal">
-        <ul>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-house"></i>
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-coins"></i>
-                    Services
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-calendar-check"></i>
-                    Bookings
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-user"></i>
-                    Account
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-wallet"></i>
-                    Wallet
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-building-columns"></i>
-                    Bank Link
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-clock"></i>
-                    Transaction History
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-gift"></i>
-                    Coupon
-                </a>
-            </li>
-            <li>
-                <a href='#'>
-                    <i class="fa-solid fa-hand-holding-dollar"></i>
-                    Loyalty
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!--side-menu ends-->
-    <!------------------------------------------------------------------------------------------>
-    <!--main section-->
-    <div class="service-panal">
-        <form>
-            <div class="segment">
-                <h1>Card Transfer</h1>
+        <nav>
+            <div class="logo-container">
+                <img src="logo.png" alt="logo">
             </div>
-            
-            <label>
-                <input type="text" placeholder="Amount"/>
-            </label>
-            <label>
-                <input type="text" placeholder="Purpose"/>
-            </label>
-            <div class="cardForm-buttons">
-                <button class="card-button" type="button"> Load </button>
-                <button class="card-button" type="button">Cancel </button>
+            <div class="search-container">
+                <input id= "search-bar" type="text" placeholder="Search">   
+                <a href="#" class="search-icon">
+                    <img src="Images/search.png">
+                </a>             
             </div>
-        </form>
-    </div>
-    <!----------------------------------------------------------------------------------------------------------------->
-    <!--info-panal-->
-    <div class="info-panal">
-        <table class="balance"> 
-            <tr>
-                <th>
-                    <div class="info-container">
-                        <div class="title">
-                            Total Balance
-                        </div>
-                        <div class="amount">
-                            <span>Rs. </span>0
-                        </div>
-                    </div> 
-                    <a class="load-button">
-                        Load Fund
+            <div class="icon-container">
+                <i class="fas fa-solid fa-bell"></i>
+                <i class="fa-solid fa-gear"></i>
+                <i class="fa fa-bars"  onClick="showMenu(true)"></i>
+            </div>
+        </nav>
+    </section><!--nav section ends-->
+    <section>
+        <div id="menu__panel">
+            <i id="menu__close" class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false)"></i>
+            <ul>
+                <li><a href='#'><i class="fa-solid fa-house"></i>Home</a></li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-coins"></i>
+                        Services
                     </a>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <div class="balance-icon">
-                        <img src="Images/wallet.png" alt="">
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Bookings
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-user"></i>
+                        Account
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-wallet"></i>
+                        Wallet
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-building-columns"></i>
+                        Bank Link
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-clock"></i>
+                        Transaction History
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-gift"></i>
+                        Coupon
+                    </a>
+                </li>
+                <li>
+                    <a href='#'>
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        Loyalty
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div  class="main-container">
+            <!--side-menu ends-->
+            <!----------------------------------------------------------------------------------------------------------------->
+            <!--info-panal-->
+            <div class="info-panal">
+                <table class="balance"> 
+                    <tr>
+                        <th>
+                            <div class="info-container">
+                                <div class="title">
+                                    Total Balance
+                                </div>
+                                <div class="amount">
+                                    <span>Rs. </span>0
+                                </div>
+                            </div> 
+                            <a class="load-button">
+                                Load Fund
+                            </a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="balance-icon">
+                                <img src="Images/wallet.png" alt="">
+                            </div>
+                            <div class="info-container">
+                                <div class="main-balance">
+                                    Main Balance
+                                </div>
+                                <div class="amount">
+                                    <span>Rs. </span>0
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="balance-icon">
+                                <img src="Images/coins.png" alt="">
+                            </div>
+                            <div class="info-container">
+                                <div class="main-balance">
+                                    Bonus Balance
+                                </div>
+                                <div class="amount">
+                                    <span>Rs. </span>0
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="balance-icon">
+                                <img src="Images/trophy.png" alt="">
+                            </div>
+                            <div class="info-container">
+                                <div class="main-balance">
+                                    Easy Points
+                                </div>
+                                <div class="amount">
+                                    <span>Rs. </span>0
+                                </div>
+                            </div>   
+                        </td>
+                    </tr>
+                </table>
+                <table class="contact">
+                    <tr>
+                        <th>
+                            <div class="heading">Contact</div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <a href='#'>01-1234567</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <a href='#'>1234-12-1-1234 (Toll Free)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <a href='#'>9876543210</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href='#'>support@easypay.com</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa-solid fa-circle-question"></i>
+                            <a href='#'>FAQS</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!------------------------------------------------------------------------------------------>
+            <!--main section-->
+            <div class="service-panal">
+                <form>
+                    <div class="segment">
+                        <h1>Card Transfer</h1>
                     </div>
-                    <div class="info-container">
-                        <div class="main-balance">
-                            Main Balance
-                        </div>
-                        <div class="amount">
-                            <span>Rs. </span>0
-                        </div>
+                    
+                    <label>
+                        <input type="text" placeholder="Amount"/>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Purpose"/>
+                    </label>
+                    <div class="cardForm-buttons">
+                        <button class="card-button" type="button"> Load </button>
+                        <button class="card-button" type="button">Cancel </button>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="balance-icon">
-                        <img src="Images/coins.png" alt="">
-                    </div>
-                    <div class="info-container">
-                        <div class="main-balance">
-                            Bonus Balance
-                        </div>
-                        <div class="amount">
-                            <span>Rs. </span>0
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="balance-icon">
-                        <img src="Images/trophy.png" alt="">
-                    </div>
-                    <div class="info-container">
-                        <div class="main-balance">
-                            Easy Points
-                        </div>
-                        <div class="amount">
-                            <span>Rs. </span>0
-                        </div>
-                    </div>   
-                </td>
-            </tr>
-        </table>
-        <table class="contact">
-            <tr>
-                <th>
-                    <div class="heading">Contact</div>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <a href='#'>01-1234567</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <a href='#'>1234-12-1-1234 (Toll Free)</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <a href='#'>9876543210</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href='#'>support@easypay.com</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i class="fa-solid fa-circle-question"></i>
-                    <a href='#'>FAQS</a>
-                </td>
-            </tr>
-        </table>
-    </div>
+                </form>
+            </div>
+        </div>
     </section> <!--main-service section-->
+    <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

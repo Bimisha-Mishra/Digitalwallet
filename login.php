@@ -32,13 +32,13 @@
             <line class="bottom-left third" x1="0" x2="50%" y1="100%" y2="100%"/>
             <line class="bottom-right third" x1="100%" x2="50%" y1="100%" y2="100%"/>
           </svg>
-          <fieldset class="login-fieldset">
+          <div class="login-fieldset">
             <input type="text" placeholder="Phone Number" class="login-fieldset-field" required>
             <input type="password" placeholder="******" class="login-fieldset-field" required>
             <button type="submit" class="login-fieldset-submit">
               Login
             </button>
-          </fieldset>
+          </div>
         </form>
       </main>
 </body>

@@ -28,6 +28,7 @@ label {
   flex: 1;
 }
 
+
 input {
   margin-right: $ruler/2;
   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
@@ -66,3 +67,8 @@ input {
   }
 }
 
+
+.main-container .service-panal{
+  border: 3.5px solid #151B6B;
+  border-radius: 6.5px;
+}
