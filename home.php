@@ -161,7 +161,7 @@ include("connection.php");
                 <div class="services-container">
                     
                     <div class="service-box" >
-                        <a class="service-icon" href="LoadFund.html">
+                        <a class="service-icon" href="LoadFund.php">
                             
                             <i class="fa-solid fa-wallet"></i>
                         </a>

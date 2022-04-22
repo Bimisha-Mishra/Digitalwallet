@@ -1,3 +1,6 @@
+<?php
+include("connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -192,19 +195,19 @@
             <!------------------------------------------------------------------------------------------>
             <!--main section-->
             <div class="service-panal">
-                <form>
+                <form method="POST" action = "RCardLoad.php">
                     <div class="segment">
                         <h1>Card Transfer</h1>
                     </div>
                     
                     <label>
-                        <input type="text" placeholder="Amount"/>
+                        <input type="tel" placeholder="Card Number" name = "card_number"/>
                     </label>
-                    <label>
-                        <input type="text" placeholder="Purpose"/>
-                    </label>
+                    <!-- <label>
+                        <input type="number" placeholder="Amount"/>
+                    </label> -->
                     <div class="cardForm-buttons">
-                        <button class="card-button" type="button"> Load </button>
+                        <button class="card-button" type="submit"> Load </button>
                         <button class="card-button" type="button">Cancel </button>
                     </div>
                 </form>

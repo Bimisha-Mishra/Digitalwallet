@@ -1,4 +1,7 @@
-
+<?php
+include "connection.php";
+include "insert_data.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,4 +54,4 @@
         </form>
       </main>
 </body>
-</html>na,
+</html>
