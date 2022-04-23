@@ -131,12 +131,10 @@ input {
   
   
   .service-panal{
-    width: calc(70% - 2px);
+    width: 70%;
     height: fit-content;
     margin: 2% 0%;
     padding: 0%;
-    border: 1px solid black;
-    border-spacing: 0;
     
     .services-container{
       width: 100%;

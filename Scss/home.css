@@ -176,14 +176,12 @@ input:focus {
 }
 
 .main-container .service-panal {
-  width: calc(70% - 2px);
+  width: 70%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: 2% 0%;
   padding: 0%;
-  border: 1px solid black;
-  border-spacing: 0;
 }
 
 .main-container .service-panal .services-container {

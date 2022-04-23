@@ -4,7 +4,7 @@ script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 
 
-function showMenu(menu) {
+function showMenu(menu, menu_p) {
 
     var angle = '0deg',
       slide = '300px';
@@ -15,13 +15,13 @@ function showMenu(menu) {
     }
   
     // Slide panel
-    $("#menu__panel").css({
+    $(menu_p).css({
       transform: "translateX(" + slide + ")"
     });
   
     // Rotate icon
     setTimeout(function() {
-      $("#menu__close").css({
+      $(".menu__close").css({
         transform: "rotate(" + angle + ")"
       });
     }, 300);
