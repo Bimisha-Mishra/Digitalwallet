@@ -1,6 +1,5 @@
 <?php
 include "connection.php";
-include "insert_data.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +31,7 @@ include "insert_data.php";
     </section>
     <main class="main">
         <a class="button-twitter" href="#" target="_blank"></a>
-        <form class="login" action = "insert_data.php" method = "POST">
+        <form class="login" action = "registration.php" method = "POST">
           <svg class="login-sides">
             <line class="top-right first" x1="50%" x2="100%" y1="0" y2="0"/>
             <line class="top-left first" x1="50%" x2="0" y1="0" y2="0"/>

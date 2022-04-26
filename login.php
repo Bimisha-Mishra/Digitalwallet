@@ -1,6 +1,9 @@
 <?php
 include "connection.php";
-include "insert_data.php";
+session_start();
+if(isset($_SESSION['U_id'])){
+  header("Location: home.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +30,7 @@ include "insert_data.php";
     </section>
     <main class="main">
         <a class="button-twitter" href="#" target="_blank"></a>
-        <form class="login" action = "OTP.php">
+        <form class="login" action = "loginCheck.php" method = "POST">
           <svg class="login-sides">
             <line class="top-right first" x1="50%" x2="100%" y1="0" y2="0"/>
             <line class="top-left first" x1="50%" x2="0" y1="0" y2="0"/>
@@ -37,8 +40,8 @@ include "insert_data.php";
             <line class="bottom-right third" x1="100%" x2="50%" y1="100%" y2="100%"/>
           </svg>
           <div class="login-fieldset">
-            <input type="text" placeholder="Phone Number" class="login-fieldset-field" required>
-            <input type="password" placeholder="******" class="login-fieldset-field" required>
+            <input type="text" placeholder="Phone Number" class="login-fieldset-field" name = "number" required>
+            <input type="password" placeholder="******" class="login-fieldset-field" name = "password" required>
             <button type="submit" class="login-fieldset-submit">
               Login
             </button>

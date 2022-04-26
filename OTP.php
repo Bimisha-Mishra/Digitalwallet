@@ -1,3 +1,6 @@
+<?php
+include "connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +37,11 @@
             <line class="bottom-right third" x1="100%" x2="50%" y1="100%" y2="100%"/>
           </svg>
           <fieldset class="login-fieldset">
-          <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
-			<input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
-			<input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
-			<input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
-			<input type="text" id="fifth" maxlength="1">
+            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+            <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+            <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+            <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+            <input type="text" id="fifth" maxlength="1">
             <button type="submit" class="login-fieldset-submit">
               Confirm
             </button>

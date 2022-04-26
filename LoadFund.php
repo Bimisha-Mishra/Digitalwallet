@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Scss/home.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Scss/home.css">
+    <link rel="stylesheet" href="Scss/navigationBar.css">
     <link rel="stylesheet" href="Scss/slidingmenu.css">
     <link rel="stylesheet" href="Scss/LoadFund.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -26,9 +27,9 @@
                 </a>             
             </div>
             <div class="icon-container">
-                <i class="fas fa-solid fa-bell"></i>
-                <i class="fa-solid fa-gear"  onClick="showMenu(true,'#menu__panel1')"></i>
-                <i class="fa fa-bars"  onClick="showMenu(true,'#menu__panel2')"></i>
+                <i class="fas fa-solid fa-bell" style="color:white;"></i>
+                <i class="fa-solid fa-gear"  onClick="showMenu(true,'#menu__panel1')" style="color:white;"></i>
+                <i class="fa fa-bars"  onClick="showMenu(true,'#menu__panel2')" style="color:white;"></i>
             </div>
         </nav>
     </section>
@@ -73,7 +74,7 @@
                         </div>
                     </div>
                     <div class="service-box">
-                        <a class="service-icon" href="RecargeCard.php">
+                        <a class="service-icon" href="RechargeCard.php">
                             <i class="fas fa-money-check"></i>
                         </a>
                         <div class="service-title">Recharge card</div>

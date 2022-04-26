@@ -1,27 +1,18 @@
-<?php
-include("connection.php");
-
-session_start();
-if(!isset($_SESSION['U_id'])){
-    header("Location: login.php");
-  }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
-    <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
-   
+    <link rel="stylesheet" href="Scss/navigationBar.css">
+    <link rel="stylesheet" href="Scss/home.css">
+    <link rel="stylesheet" href="Scss/slidingmenu.css">
+    <link rel="stylesheet" href="Scss/RechargeCard.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <title>Easy Pay</title>
+    <title>Document</title>
 </head>
 <body>
-    <section>
+<section>
         <nav>
             <div class="logo-container">
                 <img src="logo.png" alt="logo">
@@ -167,70 +158,35 @@ if(!isset($_SESSION['U_id'])){
                     </tr>
                 </table>
             </div>
-            
-            <!--------------------------->
+            <!------------------------------------------------------------------>
             <div class="service-panal">
-                <div class="services-container">
-                    
-                    <div class="service-box" >
-                        <a class="service-icon" href="LoadFund.php">
-                            
-                            <i class="fa-solid fa-wallet"></i>
-                        </a>
-                        <div class="service-title">Load</div>
+                <form method="POST" action = "">
+                    <div class="segment">
+                        <h1>Fund Transfer</h1>
                     </div>
-                    
-                    <div class="service-box">
-                        <a class="service-icon" href= "Transfer.php">
-                            <i class="fa-solid fa-money-bill-transfer"></i>
-                        </a>
-                        <div class="service-title">Transfer</div>
+                    <label for = "wallet">
+                        <select name="wallet" placeholder= "Wallet's Name">
+                            <option value="volvo">Esewa</option>
+                            <option value="saab">Khalti</option>
+                            <option value="mercedes">pay</option>
+                        </select>
+                    </label>
+                    <label>
+                        <input type="tel" placeholder="ID" name = "ID"/>
+                    </label>
+                    <label>
+                        <input type="number" placeholder="Amount"/>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Purpose"/>
+                    </label>
+
+                    <div class="cardForm-buttons">
+                        <button class="card-button" type="submit"> Submit </button>   
                     </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-money-check"></i>
-                        </div>
-                        <div class="service-title">Remittance</div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-piggy-bank"></i>
-                        </div>
-                        <div class="service-title">Bank</div>
-                    </div>
-                </div>
-                <!-------------------------- Banner --------------------------->
-                <ul class="slides">
-                    <input type="radio" name="radio-btn" id="img-1" checked />
-                    <li class="slide-container">
-                        <div class="slide">
-                            <img src="Images/banner1.jpg" />
-                        </div>
-                        <div class="nav">
-                            <label for="img-6" class="prev">&#x2039;</label>
-                            <label for="img-2" class="next">&#x203a;</label>
-                        </div>
-                    </li>
-                    
-                    <input type="radio" name="radio-btn" id="img-2" />
-                    <li class="slide-container">
-                        <div class="slide">
-                            <img src="Images/banner2.jpg" />
-                        </div>
-                        <div class="nav">
-                            <label for="img-1" class="prev">&#x2039;</label>
-                            <label for="img-3" class="next">&#x203a;</label>
-                        </div>
-                    </li>
-                    
-                    <li class="nav-dots">
-                        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-                        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-                    </li>
-                </ul>
+                </form>
             </div>
-        </div>
-    </section>
+
     <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
 </body>

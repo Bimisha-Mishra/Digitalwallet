@@ -11,16 +11,18 @@
         $query = "insert into registration (Name, Mobile_Number, Email, Password)
         values('$user_name', $number, '$email', '$password')";
 
+        mysqli_query($conn, $query);
+
         $query1 = "select max(User_id) as id from registration";
 
         $result1 = mysqli_query($conn, $query1);
-         $data1 = mysqli_assoc_fetch($result1);
+         $data1 = mysqli_fetch_assoc($result1);
 
         $query2 = "insert into balance (Main_balance, Bonus_balance, Easy_points, Total_balance, User_id )
         values (0, 0, 0, 0, $data1[id])";
 
 
-        mysqli_query($conn, $query);
+        mysqli_query($conn, $query2);
        
     }
     header("Location: login.php");
