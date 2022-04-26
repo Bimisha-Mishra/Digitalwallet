@@ -5,7 +5,7 @@ session_start();
 if(!isset($_SESSION['U_id'])){
     header("Location: login.php");
   }
-
+include ("Total_balance.php");
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +67,13 @@ if(!isset($_SESSION['U_id'])){
         <div class="main-container">
             <!------------------------------->
             <div class="info-panal">
+                <?php
+                    $user_id = $_SESSION['U_id'];
+    
+                    $query = "select Main_balance as mb, Bonus_balance as bb, Easy_points as ep, Total_balance as tb from balance where ID = $user_id and User_ID = $user_id";
+                    $result = mysqli_query($conn, $query);
+                    $data = mysqli_fetch_assoc($result);
+                ?>
                 <table class="balance"> 
                     <tr>
                         <th>
@@ -74,8 +81,8 @@ if(!isset($_SESSION['U_id'])){
                                 <div class="title">
                                     Total Balance
                                 </div>
-                                <div class="amount">
-                                    <span>Rs. </span>0
+                                <div class="amount" id = "t_balance">
+                                    <span>Rs. </span><?php echo $data['mb']?>
                                 </div>
                             </div> 
                             <a href="#" class="load-button">
@@ -89,10 +96,10 @@ if(!isset($_SESSION['U_id'])){
                                 <img src="Images/wallet.png" alt="">
                             </div>
                             <div class="info-container">
-                                <div class="main-balance">
+                                <div class="main-balance" >
                                     Main Balance
                                 </div>
-                                <div class="amount">
+                                <div class="amount" id = "m_balance">
                                     <span>Rs. </span>0
                                 </div>
                             </div>
@@ -107,7 +114,7 @@ if(!isset($_SESSION['U_id'])){
                                 <div class="main-balance">
                                     Bonus Balance
                                 </div>
-                                <div class="amount">
+                                <div class="amount" id = "b_balance">
                                     <span>Rs. </span>0
                                 </div>
                             </div>
@@ -122,7 +129,7 @@ if(!isset($_SESSION['U_id'])){
                                 <div class="main-balance">
                                     Easy Points
                                 </div>
-                                <div class="amount">
+                                <div class="amount" id = "e_points">
                                     <span>Rs. </span>0
                                 </div>
                             </div>   
@@ -231,6 +238,7 @@ if(!isset($_SESSION['U_id'])){
             </div>
         </div>
     </section>
+    
     <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
 </body>

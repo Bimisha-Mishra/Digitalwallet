@@ -1,5 +1,6 @@
 <?php
 include("connection.php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -7,9 +8,9 @@ include("connection.php");
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="Scss/home.css"> 
-    <link rel="stylesheet" title="recharge" href="Scss/RechargeCard.css">
-    <link rel="stylesheet" href="Scss/navigationBar.css">
-    <link rel="stylesheet" href="Scss/slidingmenu.css">
+    <link rel="stylesheet" title="recharge" href="Scss/RechargeCard.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/navigationBar.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 </head>
@@ -171,6 +172,13 @@ include("connection.php");
                     <label>
                         <input type="tel" placeholder="Card Number" name = "card_number"/>
                     </label>
+                    <div class="error_php">
+                        <?php
+                            if(isset($_SESSION['card_used'])){
+                                echo "<p style = 'color: red;'>This card has been used already.</p>";
+                            }
+                        ?>
+                    </div>
                     <!-- <label>
                         <input type="number" placeholder="Amount"/>
                     </label> -->
@@ -182,6 +190,9 @@ include("connection.php");
             </div>
         </div>
     </section> <!--main-service section-->
+    <?php
+        unset($_SESSION['card_used']);
+    ?>
     <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
 </body>
