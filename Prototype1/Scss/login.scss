@@ -138,6 +138,11 @@ $animation-time: 0.5s;
     }
   }
 }
+.error_php{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .button-twitter {
   animation: button-twitter-animation $animation-time forwards;

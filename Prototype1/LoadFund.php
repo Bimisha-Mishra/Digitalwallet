@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="Scss/LoadFund.css">
     <link rel="stylesheet" href="Scss/home.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Scss/home.css">
-    <link rel="stylesheet" href="Scss/navigationBar.css">
-    <link rel="stylesheet" href="Scss/slidingmenu.css">
-    <link rel="stylesheet" href="Scss/LoadFund.css">
+    <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/LoadFund.css?ts=<?=time()?>">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 </head>
 <body>

@@ -1,6 +1,5 @@
 <?php
 include "connection.php";
-
 $number = $_POST['number'];
 $password = $_POST['password'];
 
@@ -15,7 +14,7 @@ else{
     $data1 = mysqli_fetch_assoc($result1);
 
     if (empty ($data1)){
-        echo '<script>alert("Try again")</script>';
+        $_SESSION['login_error'] = 'true';
         echo "<script>location.href='login.php'</script>";
 
     }

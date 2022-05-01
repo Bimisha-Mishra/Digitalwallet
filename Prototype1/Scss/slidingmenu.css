@@ -74,8 +74,10 @@ a {
   font-size: 1.4em;
 }
 
-#menu__panel1 ul li a:hover, #menu__panel2 ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+#menu__panel1 ul li a:hover::before, #menu__panel2 ul li a:hover::before {
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 #menu__panel1 ul li a i, #menu__panel2 ul li a i {

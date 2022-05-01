@@ -1,3 +1,7 @@
+<?php
+include("connection.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +61,13 @@
         <div class="main-container">
             <!------------------------------->
             <div class="info-panal">
+                <?php
+                    $user_id = $_SESSION['U_id'];
+    
+                    $query = "select Main_balance as mb, Bonus_balance as bb, Easy_points as ep, Total_balance as tb from balance where ID = $user_id and User_ID = $user_id";
+                    $result = mysqli_query($conn, $query);
+                    $data = mysqli_fetch_assoc($result);
+                ?>
                 <table class="balance"> 
                     <tr>
                         <th>
@@ -65,7 +76,7 @@
                                     Total Balance
                                 </div>
                                 <div class="amount">
-                                    <span>Rs. </span>0
+                                    <span>Rs. </span><?php echo $data['tb']?>
                                 </div>
                             </div> 
                             <a href="#" class="load-button">
@@ -83,7 +94,7 @@
                                     Main Balance
                                 </div>
                                 <div class="amount">
-                                    <span>Rs. </span>0
+                                    <span>Rs. </span><?php echo $data['mb']?>
                                 </div>
                             </div>
                         </td>
@@ -159,7 +170,7 @@
             </div>
             <!------------------------------------------------------------------>
             <div class="service-panal">
-                <form method="POST" action = "">
+                <form method="POST" action = "Wallet_transaction.php">
                     <div class="segment">
                         <h1>Fund Transfer</h1>
                     </div>
@@ -171,13 +182,13 @@
                         </select>
                     </label>
                     <label>
-                        <input type="tel" placeholder="ID" name = "ID"/>
+                        <input type="tel" placeholder="Phone Number" name = "number"/>
                     </label>
                     <label>
-                        <input type="number" placeholder="Amount"/>
+                        <input type="number" placeholder="Amount" name = "amount"/>
                     </label>
                     <label>
-                        <input type="text" placeholder="Purpose"/>
+                        <input type="text" placeholder="Purpose" name = "purpose"/>
                     </label>
 
                     <div class="cardForm-buttons">
