@@ -27,15 +27,15 @@ if(!empty($recepient)){
         $query3 = "Update balance set Total_balance = (Total_balance + ($amount)) where User_ID = $recepient[uid]";
         
 
-        $query4 = "Insert into  history ( Mobile_number, Amount, Purpose, Send) values ($number, $amount, '$purpose', true)";
+        $query4 = "Insert into  history ( Sender_number, Receiver_number, Amount, Purpose, Send) values ($data1[mb], $number, $amount, '$purpose', true)";
 
 
-        $query5 = "Insert into  history ( Mobile_number, Amount, Purpose, Send) values ($data1[mb], $amount, '$purpose', false)";
+        $query5 = "Insert into  history ( Sender_number, Receiver_number, Amount, Purpose, Send) values ($data1[mb], $number, $amount, '$purpose', false)";
         mysqli_query($conn2, $query5);
         mysqli_query($conn, $query4);
         mysqli_query($conn2, $query3);
         mysqli_query($conn, $query2);
     }
 }
-
+header("Location: Transfer.php");
 ?>

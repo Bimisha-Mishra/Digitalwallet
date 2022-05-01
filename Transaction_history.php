@@ -174,66 +174,65 @@ if(!isset($_SESSION['U_id'])){
                 </table>
             </div>
             
-            <!--------------------------->
-            <div class="service-panal">
-                <div class="services-container">
-                    
-                    <div class="service-box" >
-                        <a class="service-icon" href="LoadFund.php">
-                            
-                            <i class="fa-solid fa-wallet"></i>
-                        </a>
-                        <div class="service-title">Load</div>
-                    </div>
-                    
-                    <div class="service-box">
-                        <a class="service-icon" href= "Transfer.php">
-                            <i class="fa-solid fa-money-bill-transfer"></i>
-                        </a>
-                        <div class="service-title">Transfer</div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-money-check"></i>
-                        </div>
-                        <div class="service-title">Remittance</div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-icon">
-                            <i class="fas fa-piggy-bank"></i>
-                        </div>
-                        <div class="service-title">Bank</div>
-                    </div>
-                </div>
-                <!-------------------------- Banner --------------------------->
-                <ul class="slides">
-                    <input type="radio" name="radio-btn" id="img-1" checked />
-                    <li class="slide-container">
-                        <div class="slide">
-                            <img src="Images/banner1.jpg" />
-                        </div>
-                        <div class="nav">
-                            <label for="img-6" class="prev">&#x2039;</label>
-                            <label for="img-2" class="next">&#x203a;</label>
-                        </div>
-                    </li>
-                    
-                    <input type="radio" name="radio-btn" id="img-2" />
-                    <li class="slide-container">
-                        <div class="slide">
-                            <img src="Images/banner2.jpg" />
-                        </div>
-                        <div class="nav">
-                            <label for="img-1" class="prev">&#x2039;</label>
-                            <label for="img-3" class="next">&#x203a;</label>
-                        </div>
-                    </li>
-                    
-                    <li class="nav-dots">
-                        <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-                        <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-                    </li>
-                </ul>
+     
+            <div class="service-panal">    
+            <?php
+        $number = (int) $_SESSION['U_number'];
+        $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) ";
+        $result2 = mysqli_query($conn, $query2);
+        $data2 = array();
+        $check_rows = mysqli_num_rows($result2);
+        echo $check_rows;
+        echo $number;
+        for($i = 0; $i<$check_rows; $i++){
+          $data2[$i] = mysqli_fetch_assoc($result2);
+        }
+        for($i=0; $i<$check_rows; $i++){
+        ?>
+        <div class="single_transcation">
+          <div class="icon">
+          <?php
+          if ($data2[$i]['Send'] = 1){
+          ?>
+            <i class="fa-solid fa-reply"></i>
+          <?php
+          }
+          else{
+          ?>
+          <i class="fa-solid fa-share"></i>
+          <?php
+          }
+          ?>
+          </div>
+          <div class="details">
+            <div class="receiver_info">
+              <?php
+              if($data2[$i]['Send'] = 1){
+                echo $data2[$i]['Receiver_number'];
+              }
+              else{
+                echo $data2[$i]['Sender_number'];
+              }
+              ?>
+            </div>
+            <div class="transaction_date">
+              <?php
+                echo $data2[$i]['Date'];
+              ?>
+            </div>
+            <div class="transaction_purpose">
+              <?php
+                echo $data2[$i]['Purpose'];
+              ?>
+            </div>
+          </div>
+          <div class="amount">
+          <span>Rs. </span><?php echo $data2[$i]['Amount']?>
+          </div>
+        </div>
+        <?php
+        }
+        ?>
             </div>
         </div>
     </section>

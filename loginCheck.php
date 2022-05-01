@@ -22,7 +22,7 @@ else{
         $_SESSION['U_id'] = $data1['User_ID'];
         $_SESSION['U_name'] = $data1['Name'];
         $_SESSION['U_email'] = $data1['Email'];
-        $_SESSION['U_number'] = $data1['Mobile_Number'];
+        $_SESSION['U_number'] = $data1['Mobile_number'];
 
         header("Location: OTP.php"); 
     } 
