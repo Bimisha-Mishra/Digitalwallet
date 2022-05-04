@@ -15,7 +15,7 @@ if(!isset($_SESSION['U_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
-   
+    <!-- <link rel="stylesheet" href="Scss/togglemode.css?ts=<?=time()?>"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <title>Easy Pay</title>
 </head>
@@ -44,8 +44,9 @@ if(!isset($_SESSION['U_id'])){
         <div id="menu__panel1">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel1')"></i>
             <ul>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Profile</a></li>
-                <li class="menu-item"><a href="logout.php"><i class="fa-solid fa-coins"></i>Logout</a></li>
+                <li class="menu-item"><a href="#">Profile</a></li>
+                <li class="menu-item"><input id = "check" type = "checkbox" onclick="dark_mode_status()">Dark mode</input></li>
+                <li class="menu-item"><a href="logout.php">Logout</a></li>
             </ul>
         </div>
         <div id="menu__panel2">
@@ -221,7 +222,7 @@ if(!isset($_SESSION['U_id'])){
                     <input type="radio" name="radio-btn" id="img-2" />
                     <li class="slide-container">
                         <div class="slide">
-                            <img src="Images/banner2.jpg" />
+                            <img src="Images/banner3.png" />
                         </div>
                         <div class="nav">
                             <label for="img-1" class="prev">&#x2039;</label>
@@ -237,7 +238,7 @@ if(!isset($_SESSION['U_id'])){
             </div>
         </div>
     </section>
-    
+    <script src = "script/darkmode.js"></script>
     <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
 </body>

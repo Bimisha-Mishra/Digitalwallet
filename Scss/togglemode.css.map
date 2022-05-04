@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,GAAG,CAAA;EACF,gBAAgB,EAFP,OAAO;CAGhB;;AACD,AAAA,YAAY,CAAA;EACX,KAAK,EALI,OAAO;CAMhB;;AACD,AAAA,aAAa,CAAA;EACZ,KAAK,EARI,OAAO;EAShB,YAAY,EATH,OAAO;CAUhB;;AACD,AAAA,cAAc,CAAA;EACb,KAAK,EAZI,OAAO;CAahB;;AAED,AAAA,IAAI,CAAA;EACH,gBAAgB,EAlBG,OAAe;EAmBlC,KAAK,EAlBQ,IAAI;CAmBjB",
+    "sources": [
+        "togglemode.scss"
+    ],
+    "names": [],
+    "file": "togglemode.css"
+}

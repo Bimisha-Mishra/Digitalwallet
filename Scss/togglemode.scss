@@ -1,0 +1,24 @@
+$background_color : rgb(51, 51, 61);
+$text_color : #fff;
+$accent : #4a50a5;
+nav{
+	background-color: $accent;
+}
+.service_box{
+	color: $accent;
+}
+.service-icon{
+	color: $accent;
+	border-color: $accent;
+}
+.service-title{
+	color: $accent;
+}
+
+body{
+	background-color: $background_color;
+	color: $text_color;
+}
+
+
+
