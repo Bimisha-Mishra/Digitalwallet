@@ -2,7 +2,7 @@
 include "connection.php";
 $number = $_POST['number'];
 $password = $_POST['password'];
-
+session_id("session1");
 session_start();
 
 if(isset($_SESSION['U_id'])){

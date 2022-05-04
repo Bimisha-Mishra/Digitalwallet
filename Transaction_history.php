@@ -1,6 +1,6 @@
 <?php
 include("connection.php");
-
+session_id("session1");
 session_start();
 if(!isset($_SESSION['U_id'])){
     header("Location: login.php");
@@ -51,13 +51,13 @@ if(!isset($_SESSION['U_id'])){
         <div id="menu__panel2">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel2')"></i>
             <ul>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class="menu-item"><a href="home.php"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-coins"></i>Services</a></li>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-check"></i>Bookings</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-user"></i>Account</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-wallet"></i>Wallet</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-building-columns"></i>Bank Link</a></li>
-                <li class="menu-item"><a href='#'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
+                <li class="menu-item"><a href='Transaction_history.php'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-gift"></i>Coupon</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-hand-holding-dollar"></i>Loyalty</a></li>
             </ul>
@@ -84,7 +84,7 @@ if(!isset($_SESSION['U_id'])){
                                     <span>Rs. </span><?php echo $data['tb']?>
                                 </div>
                             </div> 
-                            <a href="#" class="load-button">
+                            <a href="LoadFund.php" class="load-button">
                                 Load Fund
                             </a>
                         </th>
@@ -182,8 +182,7 @@ if(!isset($_SESSION['U_id'])){
         $result2 = mysqli_query($conn, $query2);
         $data2 = array();
         $check_rows = mysqli_num_rows($result2);
-        echo $check_rows;
-        echo $number;
+        
         for($i = 0; $i<$check_rows; $i++){
           $data2[$i] = mysqli_fetch_assoc($result2);
         }
@@ -192,7 +191,7 @@ if(!isset($_SESSION['U_id'])){
         <div class="single_transcation">
           <div class="icon">
           <?php
-          if ($data2[$i]['Send'] = 1){
+          if ($data2[$i]['Send'] == 1){
           ?>
             <i class="fa-solid fa-reply"></i>
           <?php
@@ -207,10 +206,21 @@ if(!isset($_SESSION['U_id'])){
           <div class="details">
             <div class="receiver_info">
               <?php
-              if($data2[$i]['Send'] = 1){
+              include "connection2.php";
+              if($data2[$i]['Send'] == 1){
+                $receiver_number = $data2[$i]['Receiver_number'];
+                $query3 = "select Name from registration where Phone_Number =  $receiver_number";
+                $result3 = mysqli_query($conn2, $query3);
+                $data3 = mysqli_fetch_assoc($result3);
+                echo $data3['Name'] . ", ";
                 echo $data2[$i]['Receiver_number'];
               }
               else{
+                $sender_number = $data2[$i]['Sender_number'];
+                $query3 = "select Name from registration where Phone_Number = $sender_number";
+                $result3 = mysqli_query($conn2, $query3);
+                $data3 = mysqli_fetch_assoc($result3);
+                echo $data3['Name'] . ", ";
                 echo $data2[$i]['Sender_number'];
               }
               ?>

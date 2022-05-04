@@ -1,5 +1,6 @@
 <?php
 include("connection.php");
+session_id("session1");
 session_start();
 ?>
 <!DOCTYPE html>
@@ -46,13 +47,13 @@ session_start();
         <div id="menu__panel2">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel2')"></i>
             <ul>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class="menu-item"><a href="home.php"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-coins"></i>Services</a></li>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-check"></i>Bookings</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-user"></i>Account</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-wallet"></i>Wallet</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-building-columns"></i>Bank Link</a></li>
-                <li class="menu-item"><a href='#'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
+                <li class="menu-item"><a href='Transaction_history.php'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-gift"></i>Coupon</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-hand-holding-dollar"></i>Loyalty</a></li>
             </ul>
@@ -79,7 +80,7 @@ session_start();
                                     <span>Rs. </span><?php echo $data['tb']?>
                                 </div>
                             </div> 
-                            <a href="#" class="load-button">
+                            <a href="LoadFund.php" class="load-button">
                                 Load Fund
                             </a>
                         </th>
@@ -188,7 +189,15 @@ session_start();
                         <input type="number" placeholder="Amount" name = "amount"/>
                     </label>
                     <label>
-                        <input type="text" placeholder="Purpose" name = "purpose"/>
+                        <select name="purpose" placeholder= "Purpose">
+                            <option value="Personal Use">Personal Use</option>
+                            <option value="Burrow/Lend">Burrow/Lend</option>
+                            <option value="Family Expences">Family Expences</option>
+                            <option value="Bill Sharing">Bill Sharing</option>
+                            <option value="Salary">Salary</option>
+                            <option value="Ride Payment">Ride Payment</option>
+                            <option value="Others">Others</option>
+                        </select>
                     </label>
 
                     <div class="cardForm-buttons">

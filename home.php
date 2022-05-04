@@ -1,6 +1,6 @@
 <?php
 include("connection.php");
-
+session_id("session1");
 session_start();
 if(!isset($_SESSION['U_id'])){
     header("Location: login.php");
@@ -84,7 +84,7 @@ if(!isset($_SESSION['U_id'])){
                                     <span>Rs. </span><?php echo $data['tb']?>
                                 </div>
                             </div> 
-                            <a href="#" class="load-button">
+                            <a href="LoadFund.php" class="load-button">
                                 Load Fund
                             </a>
                         </th>

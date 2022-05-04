@@ -1,5 +1,6 @@
 <?php
 include "connection.php";
+session_id("session1");
 session_start();
 if(isset($_SESSION['U_id'])){
   header("Location: home.php");

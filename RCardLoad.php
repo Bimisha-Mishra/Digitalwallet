@@ -1,5 +1,6 @@
 <?php
     include 'connection.php';
+    session_id("session1");
     session_start();
     $user_id = $_SESSION['U_id'];
     $card_number = $_POST['card_number'];

@@ -39,19 +39,19 @@
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel1')"></i>
             <ul>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Profile</a></li>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-coins"></i>Logout</a></li>
+                <li class="menu-item"><a href="logout.php"><i class="fa-solid fa-coins"></i>Logout</a></li>
             </ul>
         </div>
         <div id="menu__panel2">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel2')"></i>
             <ul>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li class="menu-item"><a href="home.php"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-coins"></i>Services</a></li>
                 <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-check"></i>Bookings</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-user"></i>Account</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-wallet"></i>Wallet</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-building-columns"></i>Bank Link</a></li>
-                <li class="menu-item"><a href='#'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
+                <li class="menu-item"><a href='Transaction_history.php'><i class="fa-solid fa-clock"></i>Transaction History</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-gift"></i>Coupon</a></li>
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-hand-holding-dollar"></i>Loyalty</a></li>
             </ul>

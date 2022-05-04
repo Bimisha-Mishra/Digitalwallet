@@ -5,7 +5,7 @@ include "connection2.php";
 $number = $_POST['number'];
 $amount = $_POST['amount'];
 $purpose = $_POST['purpose'];
-
+session_id("session1");
 session_start();
 $user_id = $_SESSION['U_id'];
 $user_number = $_SESSION['U_number'];
