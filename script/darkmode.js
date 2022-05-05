@@ -20,8 +20,7 @@ checkStatus()
 
 function checkStatus(){
     if (localStorage.getItem('darkMode')==="true"){
-        check.checked = true; 
-        link.name = "dark-mode";                        //the checkbox is checked (if you load the page by default it isn’t)
+        check.checked = true;                                  //the checkbox is checked (if you load the page by default it isn’t)
         link.href = './Scss/togglemode.css';                   //since it's true we load the dark theme CSS
     }else{
         check.checked = false;                          //the checkbox is unchecked
@@ -35,7 +34,6 @@ function dark_mode_status(){                                //This function gets
         link.href = '';
     } else{
         localStorage.setItem('darkMode', "true");       //same code but adapted for dark theme
-        link.name = "dark-mode";  
         link.href = './Scss/togglemode.css';
     }
 }

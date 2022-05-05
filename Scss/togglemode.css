@@ -1,22 +1,46 @@
 nav {
-  background-color: #4a50a5;
+  background-color: #202020;
+}
+
+a {
+  color: #EBECF0;
+}
+
+#menu__panel1, #menu__panel2 {
+  background-color: #202020;
 }
 
 .service_box {
   color: #4a50a5;
 }
 
-.service-icon {
+.main-container .service-panal .services-container .service-icon, .main-container .service-panal .services-container .service-title {
   color: #4a50a5;
   border-color: #4a50a5;
 }
 
-.service-title {
+.main-container .service-panal .services-container .service-box:hover .service-icon {
+  background: #4a50a5;
+}
+
+.main-container .info-panal .balance tr th .load-button {
   color: #4a50a5;
 }
 
+.main-container .info-panal .balance tr th .load-button::before, .main-container .info-panal .balance tr th .load-button::after {
+  border-color: #4a50a5;
+}
+
+.main-container .info-panal .balance, .main-container .info-panal .contact {
+  border-color: #4a50a5;
+}
+
+.main-container .info-panal .balance tr td .balance-icon {
+  background-color: #4a50a5;
+}
+
 body {
-  background-color: #33333d;
-  color: #fff;
+  background-color: #181818;
+  color: #EBECF0;
 }
 /*# sourceMappingURL=togglemode.css.map */

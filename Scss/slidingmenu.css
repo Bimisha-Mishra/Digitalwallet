@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
 
 .fadeInDown {
@@ -16,7 +16,7 @@ a {
   right: 0;
   width: 20%;
   height: auto;
-  z-index: 1;
+  z-index: 11;
   background-color: #FFFFFF;
   -webkit-box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.5);
           box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.5);
@@ -24,8 +24,8 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transform: translateX(300px);
-          transform: translateX(300px);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -70,7 +70,6 @@ a {
           align-items: center;
   gap: 0px 10%;
   text-decoration: none;
-  color: #000;
   font-size: 1.4em;
 }
 
@@ -84,6 +83,17 @@ a {
   width: 1.4em;
   padding-left: 10%;
   font-size: 1em;
+}
+
+#menu_panel_curtain {
+  width: 100vw;
+  height: 100vh;
+  background-color: #181818a0;
+  z-index: 10;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .menu {

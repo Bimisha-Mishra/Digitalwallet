@@ -3,15 +3,16 @@ var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
 document.getElementsByTagName('head')[0].appendChild(script);
 
-
 function showMenu(menu, menu_p) {
 
     var angle = '0deg',
-      slide = '300px';
+      slide = '100%';
+      $("#menu_panel_curtain").css('visibility', 'hidden');
   
     if (menu) {
       angle = '180deg';
       slide = '0';
+      $("#menu_panel_curtain").css('visibility', 'visible');
     }
   
     // Slide panel

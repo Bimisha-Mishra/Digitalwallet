@@ -13,9 +13,9 @@ if(!isset($_SESSION['U_id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/home.css">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
-    <!-- <link rel="stylesheet" href="Scss/togglemode.css?ts=<?=time()?>"> -->
+    <!--?ts=<?=time()?> <link rel="stylesheet" href="Scss/togglemode.css?ts=<?=time()?>"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <title>Easy Pay</title>
 </head>
@@ -63,6 +63,7 @@ if(!isset($_SESSION['U_id'])){
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-hand-holding-dollar"></i>Loyalty</a></li>
             </ul>
         </div>
+        <div id="menu_panel_curtain" onClick="showMenu(false,'#menu__panel1'),showMenu(false,'#menu__panel2')"></div>
         
         <div class="main-container">
             <!------------------------------->

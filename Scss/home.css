@@ -166,7 +166,7 @@ input:focus {
 
 .main-container {
   width: 100%;
-  height: auto;
+  height: calc(100%-100px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,8 +263,9 @@ input:focus {
 
 .main-container .service-panal .slides {
   padding: 0;
-  width: 609px;
-  height: 420px;
+  width: 100%;
+  height: 53.4vh;
+  overflow: hidden;
   display: block;
   margin: 0 auto;
   position: relative;
@@ -290,129 +291,8 @@ input:focus {
 .main-container .service-panal .slide {
   top: 0;
   opacity: 0;
-  width: 609px;
-  height: 420px;
-  display: block;
-  position: absolute;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: all .7s ease-in-out;
-  transition: all .7s ease-in-out;
-}
-
-.main-container .service-panal .slide img {
   width: 100%;
-  height: 100%;
-}
-
-.main-container .service-panal .nav label {
-  width: 200px;
-  height: 100%;
-  display: none;
-  position: absolute;
-  opacity: 0;
-  z-index: 9;
-  cursor: pointer;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  color: #FFF;
-  font-size: 156pt;
-  text-align: center;
-  line-height: 380px;
-  font-family: "Varela Round", sans-serif;
-  background-color: #151B6B;
-  text-shadow: 0px 0px 15px #151B6B;
-}
-
-.main-container .service-panal .slide:hover + .nav label {
-  opacity: 0.5;
-}
-
-.main-container .service-panal .nav label:hover {
-  opacity: 1;
-}
-
-.main-container .service-panal .nav .next {
-  right: 0;
-}
-
-.main-container .service-panal input:checked + .slide-container .slide {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-}
-
-.main-container .service-panal input:checked + .slide-container .nav label {
-  display: block;
-}
-
-.main-container .service-panal .nav-dots {
-  width: 100%;
-  bottom: 9px;
-  height: 11px;
-  display: block;
-  position: absolute;
-  text-align: center;
-}
-
-.main-container .service-panal .nav-dots .nav-dot {
-  top: -5px;
-  width: 11px;
-  height: 11px;
-  margin: 0 4px;
-  position: relative;
-  border-radius: 100%;
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.main-container .service-panal .nav-dots .nav-dot:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.main-container .service-panal input#img-1:checked ~ .nav-dots label#img-dot-1,
-.main-container .service-panal input#img-2:checked ~ .nav-dots label#img-dot-2,
-.main-container .service-panal input#img-3:checked ~ .nav-dots label#img-dot-3,
-.main-container .service-panal input#img-4:checked ~ .nav-dots label#img-dot-4,
-.main-container .service-panal input#img-5:checked ~ .nav-dots label#img-dot-5,
-.main-container .service-panal input#img-6:checked ~ .nav-dots label#img-dot-6 {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.main-container .service-panal .slides {
-  padding: 0;
-  width: 609px;
-  height: 420px;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-}
-
-.main-container .service-panal .slides * {
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-
-.main-container .service-panal .slides input {
-  display: none;
-}
-
-.main-container .service-panal .slide-container {
-  display: block;
-}
-
-.main-container .service-panal .slide {
-  top: 0;
-  opacity: 0;
-  width: 609px;
-  height: 420px;
+  height: auto;
   display: block;
   position: absolute;
   -webkit-transform: scale(0);
@@ -517,7 +397,7 @@ input:focus {
   height: -moz-fit-content;
   height: fit-content;
   border-spacing: 0;
-  border: 1px solid #151B6B;
+  border: 3px solid #151B6B;
 }
 
 .main-container .info-panal .balance tr {
@@ -616,7 +496,7 @@ input:focus {
   height: -moz-fit-content;
   height: fit-content;
   border-spacing: 0;
-  border: 1px solid #151B6B;
+  border: 3px solid #151B6B;
   margin-top: 10%;
   padding: 0% 10%;
 }
@@ -662,6 +542,5 @@ input:focus {
 .main-container .info-panal .contact tr td a {
   width: 75%;
   text-decoration: none;
-  color: #000;
 }
 /*# sourceMappingURL=home.css.map */
