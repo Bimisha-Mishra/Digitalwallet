@@ -14,6 +14,7 @@ if(!isset($_SESSION['U_id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/home.css">
+    <link rel="stylesheet" href="Scss/switch.css">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
     <!--?ts=<?=time()?> <link rel="stylesheet" href="Scss/togglemode.css?ts=<?=time()?>"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -44,9 +45,18 @@ if(!isset($_SESSION['U_id'])){
         <div id="menu__panel1">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel1')"></i>
             <ul>
-                <li class="menu-item"><a href="#">Profile</a></li>
-                <li class="menu-item"><input id = "check" type = "checkbox" onclick="dark_mode_status()">Dark mode</input></li>
-                <li class="menu-item"><a href="logout.php">Logout</a></li>
+                <li class="menu-item 1"><a href="#">Profile</a></li>
+                <li class="menu-item 1">
+                    <a>
+                        <label for="">Dark Mode</label>
+                        <label class="switch" >
+                            <input id = "check" type="checkbox" onclick="dark_mode_status()">
+                            <span class="slider round"></span>
+                        </label>
+                    </a>
+                    <!--<input id = "check" type = "checkbox" >Dark mode</input>-->
+                </li>
+                <li class="menu-item 1"><a href="logout.php">Logout</a></li>
             </ul>
         </div>
         <div id="menu__panel2">
