@@ -42,3 +42,9 @@ body{
 	background-color: $background_color;
 	color: $text_color;
 }
+
+.main-container {
+	.history-panal{
+		border: 3px solid $accent;
+	}
+}

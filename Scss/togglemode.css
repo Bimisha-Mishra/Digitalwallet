@@ -43,4 +43,8 @@ body {
   background-color: #181818;
   color: #EBECF0;
 }
+
+.main-container .history-panal {
+  border: 3px solid #4a50a5;
+}
 /*# sourceMappingURL=togglemode.css.map */

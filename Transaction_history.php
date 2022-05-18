@@ -4,7 +4,7 @@ session_id("session1");
 session_start();
 if(!isset($_SESSION['U_id'])){
     header("Location: login.php");
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ if(!isset($_SESSION['U_id'])){
     <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/switch.css">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
-   
+    <link rel="stylesheet" href="Scss/Transaction.css?ts=<?=time()?>">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <title>Easy Pay</title>
 </head>
@@ -78,11 +78,11 @@ if(!isset($_SESSION['U_id'])){
             <!------------------------------->
             <div class="info-panal">
                 <?php
-                    $user_id = $_SESSION['U_id'];
-    
-                    $query = "select Main_balance as mb, Bonus_balance as bb, Easy_points as ep, Total_balance as tb from balance where ID = $user_id and User_ID = $user_id";
-                    $result = mysqli_query($conn, $query);
-                    $data = mysqli_fetch_assoc($result);
+                $user_id = $_SESSION['U_id'];
+                
+                $query = "select Main_balance as mb, Bonus_balance as bb, Easy_points as ep, Total_balance as tb from balance where ID = $user_id and User_ID = $user_id";
+                $result = mysqli_query($conn, $query);
+                $data = mysqli_fetch_assoc($result);
                 ?>
                 <table class="balance"> 
                     <tr>
@@ -185,75 +185,86 @@ if(!isset($_SESSION['U_id'])){
                 </table>
             </div>
             
-     
-            <div class="service-panal">    
-            <?php
-        $number = (int) $_SESSION['U_number'];
-        $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) ";
-        $result2 = mysqli_query($conn, $query2);
-        $data2 = array();
-        $check_rows = mysqli_num_rows($result2);
-        
-        for($i = 0; $i<$check_rows; $i++){
-          $data2[$i] = mysqli_fetch_assoc($result2);
-        }
-        for($i=0; $i<$check_rows; $i++){
-        ?>
-        <div class="single_transcation">
-          <div class="icon">
-          <?php
-          if ($data2[$i]['Send'] == 1){
-          ?>
-            <i class="fa-solid fa-reply"></i>
-          <?php
-          }
-          else{
-          ?>
-          <i class="fa-solid fa-share"></i>
-          <?php
-          }
-          ?>
-          </div>
-          <div class="details">
-            <div class="receiver_info">
-              <?php
-              include "connection2.php";
-              if($data2[$i]['Send'] == 1){
-                $receiver_number = $data2[$i]['Receiver_number'];
-                $query3 = "select Name from registration where Phone_Number =  $receiver_number";
-                $result3 = mysqli_query($conn2, $query3);
-                $data3 = mysqli_fetch_assoc($result3);
-                echo $data3['Name'] . ", ";
-                echo $data2[$i]['Receiver_number'];
-              }
-              else{
-                $sender_number = $data2[$i]['Sender_number'];
-                $query3 = "select Name from registration where Phone_Number = $sender_number";
-                $result3 = mysqli_query($conn2, $query3);
-                $data3 = mysqli_fetch_assoc($result3);
-                echo $data3['Name'] . ", ";
-                echo $data2[$i]['Sender_number'];
-              }
-              ?>
-            </div>
-            <div class="transaction_date">
-              <?php
-                echo $data2[$i]['Date'];
-              ?>
-            </div>
-            <div class="transaction_purpose">
-              <?php
-                echo $data2[$i]['Purpose'];
-              ?>
-            </div>
-          </div>
-          <div class="amount">
-          <span>Rs. </span><?php echo $data2[$i]['Amount']?>
-          </div>
-        </div>
-        <?php
-        }
-        ?>
+            
+            <div class="history-panal">    
+                <?php
+                $number = (int) $_SESSION['U_number'];
+                $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) ";
+                $result2 = mysqli_query($conn, $query2);
+                $data2 = array();
+                $check_rows = mysqli_num_rows($result2);
+                
+                for($i = 0; $i<$check_rows; $i++){
+                    $data2[$i] = mysqli_fetch_assoc($result2);
+                }
+                for($i=0; $i<$check_rows; $i++){
+                    ?>
+                    <?php
+                      if ($data2[$i]['Send'] == 1){
+                        ?>
+                          <div class="single_transcation send">
+                        <?php
+                      }
+                      else{
+                          ?>
+                            <div class="single_transcation receive">
+                          <?php
+                      }
+                    ?>
+                        <div class="icon">
+                            <?php
+                            if ($data2[$i]['Send'] == 1){
+                                ?>
+                                <i class="fa-solid fa-reply"></i>
+                                <?php
+                            }
+                            else{
+                                ?>
+                                <i class="fa-solid fa-share"></i>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="details">
+                            <div class="receiver_info">
+                                <?php
+                                include "connection2.php";
+                                if($data2[$i]['Send'] == 1){
+                                    $receiver_number = $data2[$i]['Receiver_number'];
+                                    $query3 = "select Name from registration where Phone_Number =  $receiver_number";
+                                    $result3 = mysqli_query($conn2, $query3);
+                                    $data3 = mysqli_fetch_assoc($result3);
+                                    echo $data3['Name'] . ", ";
+                                    echo $data2[$i]['Receiver_number'];
+                                }
+                                else{
+                                    $sender_number = $data2[$i]['Sender_number'];
+                                    $query3 = "select Name from registration where Phone_Number = $sender_number";
+                                    $result3 = mysqli_query($conn2, $query3);
+                                    $data3 = mysqli_fetch_assoc($result3);
+                                    echo $data3['Name'] . ", ";
+                                    echo $data2[$i]['Sender_number'];
+                                }
+                                ?>
+                            </div>
+                            <div class="transaction_date">
+                                <?php
+                                echo $data2[$i]['Date'];
+                                ?>
+                            </div>
+                            <div class="transaction_purpose">
+                                <?php
+                                echo $data2[$i]['Purpose'];
+                                ?>
+                            </div>
+                        </div>
+                        <div class="amount">
+                            <span>Rs. </span><?php echo $data2[$i]['Amount']?>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </section>

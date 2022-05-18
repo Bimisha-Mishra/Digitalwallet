@@ -1,0 +1,47 @@
+* {box-sizing: border-box;}
+
+.history-panal{
+    width: 70%;
+    height: fit-content;
+    margin: 2% 0% 0% 0%;
+    padding: 2%;
+    border: 3px solid #151B6B;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.single_transcation{
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    width: 55%;
+}
+
+.amount{
+    width: 15%;
+}
+
+
+.send{
+    background: #dc3b3b30;
+}
+
+.receive{
+    background: #5dd22b30;
+}
