@@ -54,7 +54,6 @@ if(!isset($_SESSION['U_id'])){
                             <span class="slider round"></span>
                         </label>
                     </a>
-                    <!--<input id = "check" type = "checkbox" >Dark mode</input>-->
                 </li>
                 <li class="menu-item 1"><a href="logout.php">Logout</a></li>
             </ul>

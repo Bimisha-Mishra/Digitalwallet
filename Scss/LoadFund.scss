@@ -8,16 +8,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
   .services-section{
-    background: url(/prototype/FundLoadBG.jpg);
+    background: url("/Prototype Bim/wallet/Images/FundLoadBG.jpg");
     background-size: cover;
-    padding: 50px 0;
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 100px);
+    overflow: auto;
+    display: flex;
+    align-items: center;
   }
   .inner-width{
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
+    padding: 20px;
     overflow: hidden;
+    background: #ffffff42;
+    border-radius: 20px;
   }
   .section-title{
     text-align: center;

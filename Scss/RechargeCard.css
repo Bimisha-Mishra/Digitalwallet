@@ -19,7 +19,7 @@ form {
   text-shadow: 1px 1px 0 #FFF;
 }
 
-label {
+.label {
   display: block;
   margin-bottom: 24px;
   width: 100%;
@@ -59,11 +59,9 @@ input:focus, select:focus {
 }
 
 .card-button {
-  color: #61677C;
+  color: #494d5d;
   width: 40%;
   font-weight: bold;
-  -webkit-box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
-          box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: pointer;

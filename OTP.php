@@ -10,6 +10,7 @@ include "connection.php";
     <link rel="stylesheet" href="Scss/navigationBar.css">
     <link rel="stylesheet" href="Scss/login.css">
     <link rel="stylesheet" href="Scss/OTP.css"> 
+    <link rel="stylesheet" href="Scss/switch.css"> 
     <title>Login-OTP Verification</title>
 </head>
 <body>
@@ -21,7 +22,15 @@ include "connection.php";
                 <li><a href='About.html' data-item='About'>About</a></li>
                 <li><a href='#' data-item='Services'>Services</a></li>
                 <li><a href='#' data-item='Contact'>Contact</a></li>
-                <li><a href='index.html' data-item='Login'>Login</a></li>
+                <li><a href='login.php' data-item='Login'>Login</a></li>
+                <li>
+                  <a>
+                    <label class="switch" >
+                      <input id = "check" type="checkbox" onclick="dark_mode_status()">
+                      <span class="slider round"></span>
+                    </label>
+                  </a>
+                </li>
             </ul>
             </nav>
     </section>
@@ -49,5 +58,6 @@ include "connection.php";
         </form>
       </main>
     <script src = "script/OTP.js"></script>
+    <script src = "script/darkmode.js"></script>
 </body>
 </html>

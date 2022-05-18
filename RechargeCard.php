@@ -8,7 +8,8 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="Scss/home.css"> 
+    <link rel="stylesheet" href="Scss/home.css">
+    <link rel="stylesheet" href="Scss/switch.css"> 
     <link rel="stylesheet" title="recharge" href="Scss/RechargeCard.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
@@ -36,11 +37,20 @@ session_start();
         </nav>
     </section><!--nav section ends-->
     <section>
-    <div id="menu__panel1">
+        <div id="menu__panel1">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel1')"></i>
             <ul>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Profile</a></li>
-                <li class="menu-item"><a href="logout.php"><i class="fa-solid fa-coins"></i>Logout</a></li>
+                <li class="menu-item 1"><a href="#">Profile</a></li>
+                <li class="menu-item 1">
+                    <a>
+                        <label for="">Dark Mode</label>
+                        <label class="switch" >
+                            <input id = "check" type="checkbox" onclick="dark_mode_status()">
+                            <span class="slider round"></span>
+                        </label>
+                    </a>
+                </li>
+                <li class="menu-item 1"><a href="logout.php">Logout</a></li>
             </ul>
         </div>
         <div id="menu__panel2">
@@ -57,6 +67,8 @@ session_start();
                 <li class="menu-item"><a href='#'><i class="fa-solid fa-hand-holding-dollar"></i>Loyalty</a></li>
             </ul>
         </div>
+        <div id="menu_panel_curtain" onClick="showMenu(false,'#menu__panel1'),showMenu(false,'#menu__panel2')"></div>
+
         <div  class="main-container">
             <!--side-menu ends-->
             <!----------------------------------------------------------------------------------------------------------------->
@@ -177,7 +189,7 @@ session_start();
                         <h1>Card Transfer</h1>
                     </div>
                     
-                    <label>
+                    <label class="label">
                         <input type="tel" placeholder="Card Number" name = "card_number"/>
                     </label>
                     <div class="error_php">
@@ -201,6 +213,8 @@ session_start();
     <?php
         unset($_SESSION['card_used']);
     ?>
+    
+    <script src = "script/darkmode.js"></script>
     <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
 </body>

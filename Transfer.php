@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/switch.css"> 
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/RechargeCard.css?ts=<?=time()?>">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -40,8 +41,17 @@ session_start();
         <div id="menu__panel1">
             <i class="menu__close fa fa-angle-left fa-2x" onClick="showMenu(false,'#menu__panel1')"></i>
             <ul>
-                <li class="menu-item"><a href="#"><i class="fa-solid fa-house"></i>Profile</a></li>
-                <li class="menu-item"><a href="logout.php"><i class="fa-solid fa-coins"></i>Logout</a></li>
+                <li class="menu-item 1"><a href="#">Profile</a></li>
+                <li class="menu-item 1">
+                    <a>
+                        <label for="">Dark Mode</label>
+                        <label class="switch" >
+                            <input id = "check" type="checkbox" onclick="dark_mode_status()">
+                            <span class="slider round"></span>
+                        </label>
+                    </a>
+                </li>
+                <li class="menu-item 1"><a href="logout.php">Logout</a></li>
             </ul>
         </div>
         <div id="menu__panel2">
@@ -175,20 +185,20 @@ session_start();
                     <div class="segment">
                         <h1>Fund Transfer</h1>
                     </div>
-                    <label for = "wallet">
+                    <label  class="label" for = "wallet">
                         <select name="wallet" placeholder= "Wallet's Name">
                             <option value="volvo">Esewa</option>
                             <option value="saab">Khalti</option>
                             <option value="mercedes">pay</option>
                         </select>
                     </label>
-                    <label>
+                    <label class="label">
                         <input type="tel" placeholder="Phone Number" name = "number"/>
                     </label>
-                    <label>
+                    <label class="label">
                         <input type="number" placeholder="Amount" name = "amount"/>
                     </label>
-                    <label>
+                    <label class="label">
                         <select name="purpose" placeholder= "Purpose">
                             <option value="Personal Use">Personal Use</option>
                             <option value="Burrow/Lend">Burrow/Lend</option>
@@ -205,7 +215,8 @@ session_start();
                     </div>
                 </form>
             </div>
-
+    
+    <script src = "script/darkmode.js"></script>
     <script src = "script/slidingmenu.js"></script>
     <script src="https://kit.fontawesome.com/91d850ff13.js" crossorigin="anonymous"></script>
 </body>

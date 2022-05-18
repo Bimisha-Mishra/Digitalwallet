@@ -14,6 +14,7 @@ if(isset($_SESSION['U_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/login.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/navigationBar.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/switch.css"> 
     <title>Login</title>
 </head>
 <body>
@@ -25,7 +26,15 @@ if(isset($_SESSION['U_id'])){
             <li><a href='About.html' data-item='About'>About</a></li>
             <li><a href='#' data-item='Services'>Services</a></li>
             <li><a href='#' data-item='Contact'>Contact</a></li>
-            <li><a href='index.html' data-item='Login'>Login</a></li>
+            <li><a href='Signup.php' data-item='Register'>Register</a></li>
+            <li>
+              <a>
+                <label class="switch" >
+                  <input id = "check" type="checkbox" onclick="dark_mode_status()">
+                  <span class="slider round"></span>
+                </label>
+              </a>
+            </li>
           </ul>
         </nav>
     </section>
@@ -59,5 +68,7 @@ if(isset($_SESSION['U_id'])){
       <?php
         unset($_SESSION['login_error']);
       ?>
+      
+  <script src = "script/darkmode.js"></script>
 </body>
 </html>

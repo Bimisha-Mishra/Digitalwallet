@@ -180,7 +180,7 @@ input:focus {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin: 2% 0%;
+  margin: 2% 0% 0% 0%;
   padding: 0%;
 }
 
@@ -388,7 +388,7 @@ input:focus {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin: 2% 0%;
+  margin: 2% 0% 0% 0%;
 }
 
 .main-container .info-panal .balance {

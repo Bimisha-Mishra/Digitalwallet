@@ -3,6 +3,7 @@
 form {
   padding: $ruler;
   width: $ruler*20;
+  
   margin: 0 auto;
 }
 
@@ -21,7 +22,7 @@ form {
   text-shadow: 1px 1px 0 $color-white;
 }
 
-label {
+.label {
   display: block;
   margin-bottom: $ruler*1.5;
   width: 100%;
@@ -50,10 +51,10 @@ input, select{
   padding-bottom: calc(16px * 2 + 0.83em);
 }
 .card-button {
-  color:#61677C;
+  color:#494d5d;
   width: 40%;
   font-weight: bold;
-  box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
+  //box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   font-weight: 600;
