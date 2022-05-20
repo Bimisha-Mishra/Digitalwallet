@@ -8,8 +8,8 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="Scss/home.css">
-    <link rel="stylesheet" href="Scss/switch.css"> 
+    <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/switch.css?ts=<?=time()?>"> 
     <link rel="stylesheet" title="recharge" href="Scss/RechargeCard.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/home.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
@@ -190,13 +190,24 @@ session_start();
                     </div>
                     
                     <label class="label">
-                        <input type="tel" placeholder="Card Number" name = "card_number"/>
+                        <input type="tel" placeholder="Card Number" name = "card_number" required/>
                     </label>
                     <div class="error_php">
                         <?php
-                            if(isset($_SESSION['card_used'])){
-                                echo "<p style = 'color: red;'>This card has been used already.</p>";
+                        if(isset($_SESSION['card_accepted']) && isset($_SESSION['card_used']) && isset($_SESSION['card_not_found'])){
+                            if($_SESSION['card_accepted'] == 'true'){
+                                echo "<p style = 'color: green;'>This card has been accepted.</p>";
+                                $_SESSION['card_accepted'] = 'false';
                             }
+                            if($_SESSION['card_used'] == 'true'){
+                                echo "<p style = 'color: red;'>This card has been used already.</p>";
+                                $_SESSION['card_used'] = 'false';
+                            }
+                            elseif($_SESSION['card_not_found'] == 'true'){
+                                echo "<p style = 'color: red;'>This card number is incorrect.</p>";
+                                $_SESSION['card_not_found'] = 'false';
+                            }
+                        }
                         ?>
                     </div>
                     <!-- <label>

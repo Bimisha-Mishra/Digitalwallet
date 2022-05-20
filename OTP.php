@@ -7,10 +7,10 @@ include "connection.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Scss/navigationBar.css">
-    <link rel="stylesheet" href="Scss/login.css">
-    <link rel="stylesheet" href="Scss/OTP.css"> 
-    <link rel="stylesheet" href="Scss/switch.css"> 
+    <link rel="stylesheet" href="Scss/navigationBar.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/login.css?ts=<?=time()?>">
+    <link rel="stylesheet" href="Scss/OTP.css?ts=<?=time()?>"> 
+    <link rel="stylesheet" href="Scss/switch.css?ts=<?=time()?>"> 
     <title>Login-OTP Verification</title>
 </head>
 <body>
@@ -22,7 +22,7 @@ include "connection.php";
                 <li><a href='About.html' data-item='About'>About</a></li>
                 <li><a href='#' data-item='Services'>Services</a></li>
                 <li><a href='#' data-item='Contact'>Contact</a></li>
-                <li><a href='login.php' data-item='Login'>Login</a></li>
+                <li><a href='logout.php' data-item='Login'>Login</a></li>
                 <li>
                   <a>
                     <label class="switch" >
@@ -46,11 +46,11 @@ include "connection.php";
             <line class="bottom-right third" x1="100%" x2="50%" y1="100%" y2="100%"/>
           </svg>
           <fieldset class="login-fieldset">
-            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
-            <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
-            <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
-            <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
-            <input type="text" id="fifth" maxlength="1">
+            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')" autofocus required>
+            <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')" required>
+            <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')" required>
+            <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')" required>
+            <input type="text" id="fifth" maxlength="1" required>
             <button type="submit" class="login-fieldset-submit">
               Confirm
             </button>

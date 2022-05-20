@@ -186,20 +186,20 @@ session_start();
                         <h1>Fund Transfer</h1>
                     </div>
                     <label  class="label" for = "wallet">
-                        <select name="wallet" placeholder= "Wallet's Name">
+                        <select name="wallet" placeholder= "Wallet's Name" required>
                             <option value="volvo">Esewa</option>
                             <option value="saab">Khalti</option>
                             <option value="mercedes">pay</option>
                         </select>
                     </label>
                     <label class="label">
-                        <input type="tel" placeholder="Phone Number" name = "number"/>
+                        <input type="tel" placeholder="Phone Number" name = "number" required/>
                     </label>
                     <label class="label">
-                        <input type="number" placeholder="Amount" name = "amount"/>
+                        <input type="number" placeholder="Amount" name = "amount" required/>
                     </label>
                     <label class="label">
-                        <select name="purpose" placeholder= "Purpose">
+                        <select name="purpose" placeholder= "Purpose" required>
                             <option value="Personal Use">Personal Use</option>
                             <option value="Burrow/Lend">Burrow/Lend</option>
                             <option value="Family Expences">Family Expences</option>
@@ -209,7 +209,24 @@ session_start();
                             <option value="Others">Others</option>
                         </select>
                     </label>
-
+                    <div class="error_php">
+                      <?php
+                        if(isset($_SESSION['no_receipient']) && isset($_SESSION['amount_low']) && isset($_SESSION['transaction_made'])){
+                          if($_SESSION['no_receipient'] == 'true'){
+                            echo "<p style = 'color: red; font-size: medium;'>The Phone number entered doesnot belong to any user.</p>";
+                            $_SESSION['no_receipient'] = 'false';
+                          }
+                          elseif($_SESSION['amount_low'] == 'true'){
+                            echo "<p style = 'color: red; font-size: medium;'>You dont have sufficient balance to make this transfer.</p>";
+                            $_SESSION['amount_low'] = 'false';
+                          }
+                          elseif($_SESSION['transaction_made'] == 'true'){
+                            echo "<p style = 'color: green; font-size: medium;'>The transaction was successful.</p>";
+                            $_SESSION['transaction_made'] = 'false';
+                          }
+                        }
+                      ?>
+                    </div>
                     <div class="cardForm-buttons">
                         <button class="card-button" type="submit"> Submit </button>   
                     </div>

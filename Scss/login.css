@@ -177,6 +177,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: medium;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .button-twitter {

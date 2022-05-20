@@ -14,7 +14,7 @@ if(isset($_SESSION['U_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/login.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/navigationBar.css?ts=<?=time()?>">
-    <link rel="stylesheet" href="Scss/switch.css"> 
+    <link rel="stylesheet" href="Scss/switch.css?ts=<?=time()?>"> 
     <title>Login</title>
 </head>
 <body>
@@ -50,12 +50,15 @@ if(isset($_SESSION['U_id'])){
             <line class="bottom-right third" x1="100%" x2="50%" y1="100%" y2="100%"/>
           </svg>
           <div class="login-fieldset">
-            <input type="text" placeholder="Phone Number" class="login-fieldset-field" name = "number" required>
+            <input type="number" placeholder="Phone Number" class="login-fieldset-field" name = "number" required>
             <input type="password" placeholder="******" class="login-fieldset-field" name = "password" required>
             <div class="error_php">
               <?php
                 if(isset($_SESSION['login_error'])){
-                    echo "<p style = 'color: red;'>Your Phone number or the password is incorrect.</p>";
+                  if($_SESSION['login_error'] == 'true'){
+                    echo "<p style = 'color: red; font-size: medium;'>Your Phone number or the password is incorrect.</p>";
+                    $_SESSION['login_error'] = 'false';
+                  }
                 }
               ?>
             </div>

@@ -13,7 +13,7 @@
 
 .single_transcation{
     width: 100%;
-    height: 100px;
+    padding: 2%;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -22,26 +22,51 @@
 }
 
 .icon{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .details{
-    width: 55%;
+    width: 50%;
+}
+.receiver_info{
+    font-size: larger;
+    font-weight: bold;
+}
+.transaction_purpose{
+    font-size: smaller;
+    font-weight: lighter;
 }
 
 .amount{
-    width: 15%;
+    width: 20%;
+}
+.transaction_amount{
+    font-weight: bold;
+    font-size: larger;
+}
+.transaction_date{
+    font-size: smaller;
+    font-weight: lighter;
+
 }
 
 
 .send{
     background: #dc3b3b30;
+    .icon{
+       background: #dc3b3bbe;
+    }
 }
 
 .receive{
     background: #5dd22b30;
+    .icon{
+        background: #5dd22bbe;
+     }
 }

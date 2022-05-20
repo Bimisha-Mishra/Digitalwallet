@@ -189,7 +189,7 @@ if(!isset($_SESSION['U_id'])){
             <div class="history-panal">    
                 <?php
                 $number = (int) $_SESSION['U_number'];
-                $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) ";
+                $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) order by Date desc";
                 $result2 = mysqli_query($conn, $query2);
                 $data2 = array();
                 $check_rows = mysqli_num_rows($result2);
@@ -231,7 +231,7 @@ if(!isset($_SESSION['U_id'])){
                                 include "connection2.php";
                                 if($data2[$i]['Send'] == 1){
                                     $receiver_number = $data2[$i]['Receiver_number'];
-                                    $query3 = "select Name from registration where Phone_Number =  $receiver_number";
+                                    $query3 = "select Name from registration where Phone_Number =  $receiver_number ";
                                     $result3 = mysqli_query($conn2, $query3);
                                     $data3 = mysqli_fetch_assoc($result3);
                                     echo $data3['Name'] . ", ";
@@ -239,17 +239,17 @@ if(!isset($_SESSION['U_id'])){
                                 }
                                 else{
                                     $sender_number = $data2[$i]['Sender_number'];
-                                    $query3 = "select Name from registration where Phone_Number = $sender_number";
-                                    $result3 = mysqli_query($conn2, $query3);
-                                    $data3 = mysqli_fetch_assoc($result3);
-                                    echo $data3['Name'] . ", ";
+                                    if($sender_number <10000){
+                                        echo "Recharge Card, ";
+                                    }
+                                    else{
+                                      $query3 = "select Name from registration where Phone_Number = $sender_number";
+                                      $result3 = mysqli_query($conn2, $query3);
+                                      $data3 = mysqli_fetch_assoc($result3);
+                                      echo $data3['Name'] . ", ";
+                                    }
                                     echo $data2[$i]['Sender_number'];
                                 }
-                                ?>
-                            </div>
-                            <div class="transaction_date">
-                                <?php
-                                echo $data2[$i]['Date'];
                                 ?>
                             </div>
                             <div class="transaction_purpose">
@@ -259,7 +259,26 @@ if(!isset($_SESSION['U_id'])){
                             </div>
                         </div>
                         <div class="amount">
-                            <span>Rs. </span><?php echo $data2[$i]['Amount']?>
+                            <div class="transaction_amount">
+                              <?php
+                                if ($data2[$i]['Send'] == 1){
+                                  ?>
+                                    <span><?php echo '- Rs. '?></span>
+                                  <?php
+                                }
+                                else{
+                                    ?>
+                                    <span><?php echo '+ Rs. '?></span>
+                                    <?php
+                                }
+                              ?>
+                              <?php echo $data2[$i]['Amount']?>
+                          </div>
+                          <div class="transaction_date">
+                              <?php
+                              echo $data2[$i]['Date'];
+                              ?>
+                          </div>
                         </div>
                     </div>
                     <?php
