@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@import 'constants';
+* {box-sizing: border-box;}
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section{
+    height: fit-content;
+    width: fit-content;
+}
+input {
+    border: 0;
+    outline: 0;
+    font-size: $ruler;
+    border-radius: $ruler*20;
+    padding: 10px;
+    background-color:$color-bg;
+    
+    box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+    
+    &:focus {
+        box-shadow:  inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+    }
+}
+.container{
+    height: 80vh;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(129, 129, 129, 0.364);
+    border-radius: 30px;
+    padding: 25px;
+    gap: 25px;
+}
+.header{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logo{
+    height: 12.5vh;
+    width: 12.5vh;
+    img{
+        height: inherit;
+        width: inherit;
+    }
+}
+.about_form{
+    height: fit-content;
+    width: fit-content;
+    margin: 4% 0 0 0;
+
+}
+.empty_header{
+    height: 12.5vh;
+    width: 12.5vh;
+}
+.body{
+    width: 100%;
+    height:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.col1{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.col2{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.date{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    input{
+        width: 50%;
+        text-align: center;
+    }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+    }
+}
+
+h3{
+    margin-bottom: 0;
+}
+.sender_info{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    background: rgba(129, 129, 129, 0.229);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .sender_name{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        label{
+            width: 20%;
+        }
+        input{
+            width: 50%;
+        };
+    }
+    .sender_number{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        label{
+            width: 20%;
+        }
+        input{
+            width: 50%;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+}
+.receiver_info{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    background: rgba(129, 129, 129, 0.229);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .user_name{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        label{
+            width: 20%;
+        }
+        input{
+            width: 50%;
+        }
+    }
+    .user_number{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        label{
+            width: 20%;
+        }
+        input{
+            width: 50%;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+}
+.button{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: $ruler;
+    button{
+        border: 0;
+        outline: 0;
+        font-size: $ruler;
+        border-radius: $ruler*20;
+        padding: 10px;
+        background-color:$color-bg;
+        text-shadow: 1px 1px 0 $color-white;
+        
+        color:#494d5d;
+        width: 40%;
+        font-weight: bold;
+        //box-shadow: -5px -5px 20px $color-white,  5px 5px 20px $color-shadow;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+        
+        &:hover {
+            box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+        }
+        
+        &:active {
+            box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+        }
+    }
+}
+
+.table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(129, 129, 129, 0.229);
+    border-radius: 10px;
+    padding: 10px;
+    gap: 4px;
+    
+    .tr{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        .td1{
+            width: 20%;
+            input{
+                width: 100%;
+                text-align: center;
+            }
+        }
+        .td2{
+            width: 16%;
+            height: fit-content;
+            text-align: end;
+        }
+        .td3{
+            width: 55%;
+            input{
+                width: 100%;
+                text-align: center;
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            
+            /* Firefox */
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+        }
+        .td4{
+            width: 40%;
+            height: fit-content;
+        }
+    }
+}
+
+.error_php{
+    width: 100%;
+    height: fit-content;
+}
+.benificiary{
+    padding: 10px;
+    background: rgba(129, 129, 129, 0.229);
+    border-radius: 10px;
+    width: 100%;
+}

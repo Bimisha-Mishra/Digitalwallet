@@ -239,16 +239,21 @@ if(!isset($_SESSION['U_id'])){
                                 }
                                 else{
                                     $sender_number = $data2[$i]['Sender_number'];
-                                    if($sender_number <10000){
-                                        echo "Recharge Card, ";
+                                    if($sender_number == 2147483647){
+                                        echo "Easy Pay Voucher";
                                     }
                                     else{
-                                      $query3 = "select Name from registration where Phone_Number = $sender_number";
-                                      $result3 = mysqli_query($conn2, $query3);
-                                      $data3 = mysqli_fetch_assoc($result3);
-                                      echo $data3['Name'] . ", ";
+                                        if($sender_number <10000){
+                                            echo "Recharge Card, ";
+                                        }
+                                        else{
+                                          $query3 = "select Name from registration where Phone_Number = $sender_number";
+                                          $result3 = mysqli_query($conn2, $query3);
+                                          $data3 = mysqli_fetch_assoc($result3);
+                                          echo $data3['Name'] . ", ";
+                                        }
+                                        echo $data2[$i]['Sender_number'];
                                     }
-                                    echo $data2[$i]['Sender_number'];
                                 }
                                 ?>
                             </div>
