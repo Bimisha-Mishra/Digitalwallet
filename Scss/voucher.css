@@ -12,6 +12,7 @@ html, body {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #151B6B;
 }
 
 body {
@@ -39,9 +40,9 @@ input {
   border: 0;
   outline: 0;
   font-size: 16px;
-  border-radius: 320px;
   padding: 10px;
   background-color: #EBECF0;
+  color: #151B6B;
   -webkit-box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
           box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
   -webkit-box-sizing: border-box;
@@ -59,7 +60,9 @@ input:focus {
 }
 
 .container {
-  height: 80vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -70,14 +73,14 @@ input:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background: #babecc60;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: rgba(129, 129, 129, 0.364);
-  border-radius: 30px;
+  border: 3px solid #151B6B;
   padding: 25px;
   gap: 25px;
 }
@@ -201,8 +204,7 @@ h3 {
   height: -moz-fit-content;
   height: fit-content;
   padding: 10px;
-  background: rgba(129, 129, 129, 0.229);
-  border-radius: 10px;
+  border: 3px solid #151B6B;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,8 +282,7 @@ h3 {
   height: -moz-fit-content;
   height: fit-content;
   padding: 10px;
-  background: rgba(129, 129, 129, 0.229);
-  border-radius: 10px;
+  border: 3px solid #151B6B;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,11 +375,10 @@ h3 {
   border: 0;
   outline: 0;
   font-size: 16px;
-  border-radius: 320px;
   padding: 10px;
-  background-color: #EBECF0;
+  background-color: #BABECC;
   text-shadow: 1px 1px 0 #FFF;
-  color: #494d5d;
+  color: #151B6B;
   width: 40%;
   font-weight: bold;
   -webkit-transition: all 0.2s ease-in-out;
@@ -406,8 +406,7 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: rgba(129, 129, 129, 0.229);
-  border-radius: 10px;
+  border: 3px solid #151B6B;
   padding: 10px;
   gap: 4px;
 }
@@ -482,8 +481,7 @@ h3 {
 
 .benificiary {
   padding: 10px;
-  background: rgba(129, 129, 129, 0.229);
-  border-radius: 10px;
+  border: 3px solid #151B6B;
   width: 100%;
 }
 /*# sourceMappingURL=voucher.css.map */

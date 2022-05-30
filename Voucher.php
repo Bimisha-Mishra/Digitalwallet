@@ -49,18 +49,22 @@ session_start();
                     </div>
                     <div class="error_php">
                         <?php
-                        if(isset($_SESSION['empty_amount']) && isset($_SESSION['accepted']) && isset($_SESSION['no_recep'])){
+                        if(isset($_SESSION['empty_amount']) && isset($_SESSION['accepted']) && isset($_SESSION['no_recep']) && isset($_SESSION['wrong_name'])){
                             if($_SESSION['accepted'] == 'true'){
                                 echo "<p style = 'color: green;'>This transaction has been accepted.</p>";
                                 $_SESSION['accepted'] = 'false';
                             }
-                            if($_SESSION['empty_amount'] == 'true'){
+                            elseif($_SESSION['empty_amount'] == 'true'){
                                 echo "<p style = 'color: red;'>Please put some amount to deposite.</p>";
                                 $_SESSION['empty_amount'] = 'false';
                             }
                             elseif($_SESSION['no_recep'] == 'true'){
-                                echo "<p style = 'color: red;'>The Recepient Name or Number is incorrect.</p>";
+                                echo "<p style = 'color: red;'>The Recepient Number is incorrect.</p>";
                                 $_SESSION['no_recep'] = 'false';
+                            }
+                            elseif($_SESSION['wrong_name'] == 'true'){
+                                echo "<p style = 'color: red;'>The Recepient Nameis incorrect.</p>";
+                                $_SESSION['wrong_name'] = 'false';
                             }
                         }
                         ?>
