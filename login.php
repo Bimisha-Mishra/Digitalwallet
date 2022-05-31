@@ -54,10 +54,14 @@ if(isset($_SESSION['U_id'])){
             <input type="password" placeholder="******" class="login-fieldset-field" name = "password" required>
             <div class="error_php">
               <?php
-                if(isset($_SESSION['login_error'])){
+                if(isset($_SESSION['login_error'])  && isset($_SESSION['registered'])){
                   if($_SESSION['login_error'] == 'true'){
                     echo "<p style = 'color: red; font-size: medium;'>Your Phone number or the password is incorrect.</p>";
                     $_SESSION['login_error'] = 'false';
+                  }
+                  elseif($_SESSION['registered'] == 'true'){
+                    echo "<p style = 'color: green; font-size: medium;'>Account has been registered.</p>";
+                    $_SESSION['registered'] = 'false';
                   }
                 }
               ?>

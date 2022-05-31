@@ -1,5 +1,7 @@
 <?php
 include "connection.php";
+session_id("session1");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +56,29 @@ include "connection.php";
         <input type="number" placeholder="Phone Number" class="login-fieldset-field" name = "Number" required>
         <input type="text" placeholder="Email" class="login-fieldset-field" name = "Email"  required>
         <input type="password" placeholder="Password" class="login-fieldset-field" name = "Password" required>
-        <input type="password" placeholder="confirm Password" class="login-fieldset-field" required>
+        <input type="password" placeholder="confirm Password" class="login-fieldset-field" name = "conform_Password" required>
+        <div class="error_php">
+          <?php
+          if(isset($_SESSION['number_exists']) && isset($_SESSION['email_exists']) && isset($_SESSION['conformation_failed']) && isset($_SESSION['match_fail'])){
+              if($_SESSION['number_exists'] == 'true'){
+                  echo "<p style = 'color: red;'>The Mobile number already exists and cannot be registered.</p>";
+                  $_SESSION['number_exists'] = 'false';
+              }
+              elseif($_SESSION['email_exists'] == 'true'){
+                  echo "<p style = 'color: red;'>The email already exists and cannot be registered.</p>";
+                  $_SESSION['email_exists'] = 'false';
+              }
+              elseif($_SESSION['conformation_failed'] == 'true'){
+                  echo "<p style = 'color: red;'>Verification code could not be sent to this email.</p>";
+                  $_SESSION['conformation_failed'] = 'false';
+              }
+              elseif($_SESSION['match_fail'] == 'true'){
+                  echo "<p style = 'color: red;'>The password doesnot match.</p>";
+                  $_SESSION['match_fail'] = 'false';
+              }
+          }
+          ?>
+        </div>
         <button type="submit" class="login-fieldset-submit">
           Register
         </button>
