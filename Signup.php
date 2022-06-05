@@ -59,22 +59,26 @@ session_start();
         <input type="password" placeholder="confirm Password" class="login-fieldset-field" name = "conform_Password" required>
         <div class="error_php">
           <?php
-          if(isset($_SESSION['number_exists']) && isset($_SESSION['email_exists']) && isset($_SESSION['conformation_failed']) && isset($_SESSION['match_fail'])){
+          if(isset($_SESSION['number_exists']) && isset($_SESSION['email_exists']) && isset($_SESSION['conformation_failed']) && isset($_SESSION['match_fail'])  && isset($_SESSION['registered'])){
               if($_SESSION['number_exists'] == 'true'){
-                  echo "<p style = 'color: red;'>The Mobile number already exists and cannot be registered.</p>";
+                  echo "<p style = 'color: red; font-size: medium;'>The Mobile number already exists and cannot be registered.</p>";
                   $_SESSION['number_exists'] = 'false';
               }
               elseif($_SESSION['email_exists'] == 'true'){
-                  echo "<p style = 'color: red;'>The email already exists and cannot be registered.</p>";
+                  echo "<p style = 'color: red; font-size: medium;'>The email already exists and cannot be registered.</p>";
                   $_SESSION['email_exists'] = 'false';
               }
               elseif($_SESSION['conformation_failed'] == 'true'){
-                  echo "<p style = 'color: red;'>Verification code could not be sent to this email.</p>";
+                  echo "<p style = 'color: red; font-size: medium;'>Verification code could not be sent to this email.</p>";
                   $_SESSION['conformation_failed'] = 'false';
               }
               elseif($_SESSION['match_fail'] == 'true'){
-                  echo "<p style = 'color: red;'>The password doesnot match.</p>";
+                  echo "<p style = 'color: red; font-size: medium;'>The password doesnot match.</p>";
                   $_SESSION['match_fail'] = 'false';
+              }
+              elseif($_SESSION['registered'] == 'true'){
+                echo "<p style = 'color: green; font-size: medium;'>Account has been registered.</p>";
+                $_SESSION['registered'] = 'false';
               }
           }
           ?>

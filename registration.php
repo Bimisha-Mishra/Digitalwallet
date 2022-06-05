@@ -44,25 +44,19 @@ if ($password == $c_password)
       $code = mysqli_fetch_assoc($result);
     } while (!empty($code));
     
-    $baseurl='localhost/Prototype%20Bim/wallet/';
+    $baseurl='localhost/Prototype/wallet/';
     $to = $uesr_email;
     $subject = "Email Verification";
     
     $message = 'Dear '.$user_name.',<br>';
     $message .= 'Open this link to verify your email address:-<br>';
-    $message .= $baseurl.'verificationpage.php?activation_code='.$user_activation_code.'<br>';
+    $message .= '<a href='.$baseurl.'verificationpage.php?activation_code='.$user_activation_code.'>Click Here</a><br>';
     $message .= "<p> Best Regards, EasyPay </p><br>";
     
-    // // Always set content-type when sending HTML email
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    // $header = "From: broshan18@tbc.edu.np";
-    //         $header .= "MIME-Version: 1.0" . "\r\n";
-    //         $header .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    // // More headers
     $headers .= 'From: EasyPay Wallet<easypaywallet01@gmail.com>' . "\r\n";
-    // $headers .= 'Cc: myboss@example.com' . "\r\n";
-    if(mail($uesr_email,$subject,$message,$headers)){
+    if(mail($to,$subject,$message,$headers)){
       //save to database
       $query = "insert into registration (Name, Mobile_Number, Email, Password, Activation_Code, Verified )
       values('$user_name', '$user_number', '$uesr_email', '$encrypted_password', '$user_activation_code', false)";
@@ -76,7 +70,7 @@ if ($password == $c_password)
       values (0, 0, 0, 0, $data1[id])";
       mysqli_query($conn, $query2);
       $_SESSION['registered'] = 'true';
-      header("Location: login.php");
+      header("Location: Signup.php");
     }
     else{
       $_SESSION['conformation_failed'] = 'true';

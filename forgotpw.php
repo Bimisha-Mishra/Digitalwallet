@@ -40,7 +40,7 @@ if(isset($_SESSION['U_id'])){
     </section>
     <main class="main">
         <a class="button-twitter" href="#" target="_blank"></a>
-        <form class="login" action = "loginCheck.php" method = "POST">
+        <form class="login" action = "forgotpw_email.php" method = "POST">
           <svg class="login-sides">
             <line class="top-right first" x1="50%" x2="100%" y1="0" y2="0"/>
             <line class="top-left first" x1="50%" x2="0" y1="0" y2="0"/>
@@ -50,33 +50,32 @@ if(isset($_SESSION['U_id'])){
             <line class="bottom-right third" x1="100%" x2="50%" y1="100%" y2="100%"/>
           </svg>
           <div class="login-fieldset">
+            <p>Enter your number to send a link to change your password.</p>
             <input type="number" placeholder="Phone Number" class="login-fieldset-field" name = "number" required>
-            <input type="password" placeholder="******" class="login-fieldset-field" name = "password" required>
-            <p>Forgot Password? <span><a href="forgotpw.php">Click here!</a></span></p>
             <div class="error_php">
               <?php
-                if(isset($_SESSION['login_error']) && isset($_SESSION['verified']) ){
-                  if($_SESSION['login_error'] == 'true'){
-                    echo "<p style = 'color: red;'>Your Phone number or the password is incorrect.</p>";
-                    $_SESSION['login_error'] = 'false';
+                if(isset($_SESSION['wrong_number'])  && isset($_SESSION['email_sent']) ){
+                  if($_SESSION['wrong_number'] == 'true'){
+                    echo "<p style = 'color: red;'>Your Phone number is incorrect.</p>";
+                    $_SESSION['wrong_number'] = 'false';
                   }
-                  if($_SESSION['verified'] == 'false'){
-                    echo "<p style = 'color: red;'>You are not verified. Check your email to Verify.</p>";
-                    unset($_SESSION['verified']);
+                  elseif($_SESSION['email_sent'] == 'true'){
+                    echo "<p style = 'color: green;'>Plese check your email for the link.</p>";
+                    unset($_SESSION['email_sent']);
+                  }
+                  else{
+                    echo "<p style = 'color: red;'>Couldn't send email to this number.</p>";
+                    unset($_SESSION['email_sent']);
                   }
                 }
               ?>
             </div>
             <button type="submit" class="login-fieldset-submit">
-              Login
+              Submit
             </button>
           </div>
         </form>
-      </main>
-      <?php
-        unset($_SESSION['login_error']);
-      ?>
-      
+    </main>
   <script src = "script/darkmode.js"></script>
 </body>
 </html>

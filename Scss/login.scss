@@ -120,8 +120,20 @@ $animation-time: 0.5s;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
+    align-items: center;
     padding: 5em 0;
     opacity: 0;
+
+    h2{
+      font-size: x-large;
+      margin-top: 5px;
+    }
+    p{
+      font-size: small;
+    }
+    a{
+      font-size: small;
+    }
 
     &-field {
       @extend %login-item;

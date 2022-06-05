@@ -146,8 +146,24 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5em 0;
   opacity: 0;
+}
+
+.login-fieldset h2 {
+  font-size: x-large;
+  margin-top: 5px;
+}
+
+.login-fieldset p {
+  font-size: small;
+}
+
+.login-fieldset a {
+  font-size: small;
 }
 
 .login-fieldset-field {
