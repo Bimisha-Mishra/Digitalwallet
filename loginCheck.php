@@ -1,16 +1,18 @@
 <?php
 include "connection.php";
-$number = $_POST['number'];
-$encrypted_password =  sha1($_POST['password']);
 session_id("session1");
 session_start();
-$_SESSION['login_error'] = 'false';
-$_SESSION['verified'] = 'false';
 
-if(isset($_SESSION['U_id'])){
+if(isset($_SESSION['U_id']) && isset($_SESSION['logged_in'])){
     header("Location: home.php");
 }
-else{
+elseif($_SERVER["REQUEST_METHOD"] == "POST"){
+    $number = $_POST['number'];
+    $encrypted_password =  sha1($_POST['password']);
+    
+    $_SESSION['login_error'] = 'false';
+    $_SESSION['verified'] = 'false';
+    
     $query1 = "select User_ID, Name, Mobile_number, Email, Activation_Code, Verified from registration where Mobile_number = '$number' and Password = '$encrypted_password'";
     $result1 = mysqli_query($conn, $query1);
     $data1 = mysqli_fetch_assoc($result1);
@@ -54,15 +56,17 @@ else{
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: EasyPay Wallet<easypaywallet01@gmail.com>' . "\r\n";
             mail($to,$subject,$message,$headers);
-
+            
             header("Location: login.php");
         }
-        
     }
     else{
         $_SESSION['login_error'] = 'true';
-        echo "<script>location.href='login.php'</script>";
+        header("Location: login.php");
     } 
+}
+else{
+    header("Location: login.php");
 }
 
 ?>

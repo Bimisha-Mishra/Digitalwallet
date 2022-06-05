@@ -71,7 +71,7 @@ session_start();
                 
             }
             else{
-                if ($data['Verified'] == 1) {
+                if ($data['Verified'] == 1){
                     //user already verified
                     echo "
                     <p>Hello, $data[Name]</p>

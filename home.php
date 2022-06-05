@@ -4,7 +4,7 @@ session_id("session1");
 session_start();
 if(!isset($_SESSION['U_id']) && !isset($_SESSION['logged_in'])){
     header("Location: login.php");
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,6 @@ if(!isset($_SESSION['U_id']) && !isset($_SESSION['logged_in'])){
     <link rel="stylesheet" href="Scss/home.css">
     <link rel="stylesheet" href="Scss/switch.css">
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
-    <!--?ts=<?=time()?> <link rel="stylesheet" href="Scss/togglemode.css?ts=<?=time()?>"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <title>Easy Pay</title>
 </head>
