@@ -11,7 +11,7 @@ if(!isset($_SESSION['U_id']) && !isset($_SESSION['logged_in'])){
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Load Fund</title>
     <link rel="stylesheet" href="Scss/LoadFund.css">
     <link rel="stylesheet" href="Scss/home.css">
     <link rel="stylesheet" href="Scss/switch.css"> 

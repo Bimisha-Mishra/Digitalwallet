@@ -18,7 +18,7 @@ if(!isset($_SESSION['U_id']) && !isset($_SESSION['logged_in'])){
     <link rel="stylesheet" href="Scss/slidingmenu.css?ts=<?=time()?>">
     <link rel="stylesheet" href="Scss/Transaction.css?ts=<?=time()?>">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-    <title>Easy Pay</title>
+    <title>Transaction History</title>
 </head>
 <body>
     <section>
@@ -189,7 +189,7 @@ if(!isset($_SESSION['U_id']) && !isset($_SESSION['logged_in'])){
             <div class="history-panal">    
                 <?php
                 $number = (int) $_SESSION['U_number'];
-                $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) order by Date desc";
+                $query2 = "select Sender_number, Receiver_number, Amount, Date, Purpose, Send from history where (Sender_number = $number and Send = 1) or (Receiver_number = $number and Send = 0) order by Date desc, history_id desc";
                 $result2 = mysqli_query($conn, $query2);
                 $data2 = array();
                 $check_rows = mysqli_num_rows($result2);

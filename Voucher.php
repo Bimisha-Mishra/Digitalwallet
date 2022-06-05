@@ -10,7 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Scss/voucher.css?ts=<?=time()?>">
-    <title>Document</title>
+    <title>Voucher</title>
 </head>
 <body>
     <form class="section"  method="POST" action = "Voucher_Transfer.php">

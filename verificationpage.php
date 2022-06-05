@@ -12,7 +12,7 @@ session_start();
   <link rel="stylesheet" href="Scss/login.css?ts=<?=time()?>">
   <link rel="stylesheet" href="Scss/navigationBar.css?ts=<?=time()?>">
   <link rel="stylesheet" href="Scss/switch.css?ts=<?=time()?>"> 
-  <title>Login</title>
+  <title>User Verification</title>
   <style>
     .main {
       margin-top: 8vh;

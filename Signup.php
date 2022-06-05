@@ -16,7 +16,7 @@ if(isset($_SESSION['U_id']) && isset($_SESSION['logged_in'])){
   <link rel="stylesheet" href="Scss/login.css">
   <link rel="stylesheet" href="Scss/navigationBar.css">
   <link rel="stylesheet" href="Scss/switch.css"> 
-  <title>Login</title>
+  <title>Sign Up</title>
   <style>
     .main {
       margin-top: 8vh;
